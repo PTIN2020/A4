@@ -1,0 +1,9 @@
+{
+    "id_user":"11223344X",
+    "nombre":"Antonio",
+    "apellidos":"García Fernández",
+    "nacio":"14/03/1986",
+    "genero":"Hombre",
+    "vip":true,
+    "disabled":false
+  }
