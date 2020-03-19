@@ -1,4 +1,9 @@
 # A4
+
+
+Ejemplos de datos:
+ej-algo son listas de datos
+algo son ejemplo de como se han de introducir los datos
+=======
 Per veure el video de la presentació, obrir el fitxer videolink i copiar l'enllaç a un navegador
 
-A la carpeta ejemplos, se encuentran ejemplos de datos de la base de datos. Los ej-algo son listas de resultados. Los algo son ejemplos de datos para introducir.
