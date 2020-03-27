@@ -1,0 +1,4 @@
+{"_id":{"$oid":"5e735c51a9ca3e03a7fed7bf"},"id_user":"11223344X","nombre":"Antonio","apellidos":"García Fernández","nacio":"14/03/1986","genero":"Hombre","vip":true,"disabled":false}
+{"_id":{"$oid":"5e735c93a9ca3e03a7fed7c0"},"id_user":"54661123X","nombre":"María","apellidos":"Fernández García","nacio":"22/04/1956","genero":"Mujer","vip":true,"disabled":false}
+{"_id":{"$oid":"5e735ccfa9ca3e03a7fed7c1"},"id_user":"X6554122F","nombre":"Merouan","apellidos":"Smith","nacio":"21/12/2000","genero":"Hombre","vip":false,"disabled":false}
+{"_id":{"$oid":"5e735d5fa9ca3e03a7fed7c2"},"id_user":"B2080823X","nombre":"Sunita","apellidos":"Hemamda","nacio":"14/03/1996","genero":"Mujer","vip":true,"disabled":false}
