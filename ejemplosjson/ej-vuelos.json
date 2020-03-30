@@ -1,0 +1,3 @@
+{"_id":{"$oid":"5e735ee7a9ca3e03a7fed7c3"},"id":"IB4300","origen":"Vilanova i la Geltrú","destino":"Madrid","fecha":"14/03/2020","hora":"14:24","aerolinea":"Iberia","puerta":"B20","estado":"Embarcando"}
+{"_id":{"$oid":"5e735f40a9ca3e03a7fed7c4"},"id":"LH3341","origen":"Vilanova i la Geltrú","destino":"Frankfurt","fecha":"14/03/2020","hora":"15:24","aerolinea":"Lufthansa","puerta":"ABC","estado":"En hora"}
+{"_id":{"$oid":"5e735f94a9ca3e03a7fed7c5"},"id":"BA0098","origen":"Vilanova i la Geltrú","destino":"London City","fecha":"14/03/2020","hora":"20:24","aerolinea":"British Airways","puerta":"ABC","estado":"Cancelado"}
