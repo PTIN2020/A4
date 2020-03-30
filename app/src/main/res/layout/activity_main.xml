@@ -11,12 +11,12 @@
 
 
     <LinearLayout
-        android:layout_width="250dp"
+        android:layout_width="272dp"
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
         <TextView
-            android:layout_width="300dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Login"
             android:textSize="30dp"
@@ -53,7 +53,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="  Don't have an account ?  "
+                android:text="No recuerdas la contraseña?  "
                 android:textSize="14dp"
                 android:textColor="@color/black"
                 android:textStyle="bold"/>
@@ -62,7 +62,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="Register"
+                android:text="Restablece"
                 android:textSize="14dp"
                 android:textColor="@color/blue"
                 android:textStyle="bold"/>
@@ -76,7 +76,7 @@
             android:textColor="@color/colorPrimary"
             android:textSize="14dp"
             android:layout_marginTop="20dp"
-            android:text="Login"
+            android:text="Entra"
             android:textStyle="bold"
             android:textAllCaps="false"
             android:layout_gravity="center"
