@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/navigation_vuelos"
+        android:icon="@drawable/ic_vuelos_ok"
+        android:title="Vuelos" />
+
+    <item
+        android:id="@+id/menu_mapa"
+        android:icon="@drawable/ic_mapa"
+        android:title="Mapa" />
+    <item
+        android:id="@+id/menu_servicios"
+        android:icon="@drawable/ic_servicios"
+        android:title="Servicios" />
+    <item
+        android:id="@+id/menu_tiendas"
+        android:icon="@drawable/ic_shopping_basket"
+        android:title="Tienda" />
+    <item
+        android:id="@+id/menu_perfil"
+        android:icon="@drawable/ic_account_circulo"
+        android:title="Perfil" />
+
+</menu>
