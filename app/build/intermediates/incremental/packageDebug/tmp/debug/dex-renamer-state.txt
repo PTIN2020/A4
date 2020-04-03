@@ -1,4 +1,0 @@
-#Mon Mar 30 15:39:46 CEST 2020
-base.0=/Users/sergiosuarez/Documents/GitHub/A4/app/build/intermediates/dex/debug/out/classes.dex
-path.0=classes.dex
-renamed.0=classes.dex
