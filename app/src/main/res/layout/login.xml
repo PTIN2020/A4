@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
     android:gravity="center"
-    tools:context=".MainActivity">
+    tools:context="terminal1.a4.VIA.MainActivity">
 
 
     <LinearLayout
