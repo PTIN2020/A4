@@ -1,10 +1,8 @@
-package terminal1.a4.VIA;
+package terminal1.a4.loginui;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-
-import terminal1.a4.loginui.R;
 
 public class MainActivity extends AppCompatActivity {
 

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context="terminal1.a4.loginui.MainActivity">
+    tools:context=".MainActivity">
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -74,7 +74,7 @@
             </TextView>
 
             <RatingBar
-                android:id="@+id/ratingBar1"
+                android:id="@+id/ratingBar"
                 android:layout_width="wrap_content"
                 android:layout_height="41dp"
                 android:layout_alignParentTop="true"
@@ -83,8 +83,7 @@
                 android:layout_marginTop="5dp"
                 android:layout_marginEnd="5dp"
                 android:layout_marginRight="16dp"
-                android:layout_weight="0.1"
-                tools:ignore="DuplicateIds" />
+                android:layout_weight="0.1" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -130,7 +129,7 @@
             </TextView>
 
             <RatingBar
-                android:id="@+id/ratingBar2"
+                android:id="@+id/ratingBar"
                 android:layout_width="wrap_content"
                 android:layout_height="41dp"
                 android:layout_alignParentTop="true"
@@ -186,7 +185,7 @@
             </TextView>
 
             <RatingBar
-                android:id="@+id/ratingBar3"
+                android:id="@+id/ratingBar"
                 android:layout_width="wrap_content"
                 android:layout_height="41dp"
                 android:layout_alignParentTop="true"
@@ -242,7 +241,7 @@
             </TextView>
 
             <RatingBar
-                android:id="@+id/ratingBar4"
+                android:id="@+id/ratingBar"
                 android:layout_width="wrap_content"
                 android:layout_height="41dp"
                 android:layout_alignParentTop="true"
