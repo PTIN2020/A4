@@ -1,0 +1,10 @@
+{
+  "id":"IB4300",
+  "origen":"Vilanova i la Geltrú",
+  "destino":"Madrid",
+  "fecha":"14/03/2020",
+  "hora":"14:24",
+  "aerolinea":"Iberia",
+  "puerta":"B20",
+  "estado":"Embarcando"
+}
