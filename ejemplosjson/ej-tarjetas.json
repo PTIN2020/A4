@@ -1,0 +1,3 @@
+{"_id":{"$oid":"5e736186a9ca3e03a7fed7c6"},"id_card":"IB00000001","id_user":"11223344X","aerolinea":"Iberia","millas":{"$numberLong":"43655625432"},"status":"Gold","caducidad":"31/12/2021"}
+{"_id":{"$oid":"5e7361daa9ca3e03a7fed7c7"},"id_card":"IB00000002","id_user":"54661123X","aerolinea":"Iberia","millas":{"$numberLong":"7486375647365"},"status":"Gold","caducidad":"31/12/2021"}
+{"_id":{"$oid":"5e7363a5a9ca3e03a7fed7c8"},"id_card":"BA00000001","id_user":"B2080823X","aerolinea":"British Airways","millas":{"$numberLong":"73487284673"},"status":"Gold","caducidad":"31/12/2021"}

@@ -1,0 +1,14 @@
+{
+  "id_ticket" : "GTY765",
+  "pasajero" : "Sunita Hemamda",
+  "id_card" : "BA00000001",
+  "id_user" : "B2080823X",
+  "id_flight" : "LH3341",
+  "aerolinea" : "Lufthansa",
+  "fecha" : "31/08/2020",
+  "asiento" : "24B",
+  "vip" : true,
+  "disabled" : false,
+  "maletas_paid" : 3,
+  "maletas_checked" : 0
+}

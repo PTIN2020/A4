@@ -1,0 +1,9 @@
+{
+  "nombre":  "Maletas Imperdibles",
+  "tipo" : "Tienda",
+  "local": "C12",
+  "descripción" : "Maletas, Trolleys, Localizadores, Candados",
+  "estado" : "abierto",
+  "logo" : "https://rutaallogomaletasimperdibles.png",
+  "foto" : "https://rutadelafotomaletasimperdibles.png"
+}
