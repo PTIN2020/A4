@@ -64,7 +64,7 @@
             android:layout_marginLeft="16dp"
             android:layout_marginTop="8dp"
             android:layout_marginRight="16dp"
-            android:background="@drawable/redbar">
+            android:background="@drawable/redbar1">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -129,7 +129,7 @@
             android:layout_marginLeft="16dp"
             android:layout_marginTop="16dp"
             android:layout_marginRight="16dp"
-            android:background="@drawable/burger">
+            android:background="@drawable/burger1">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -195,7 +195,7 @@
             android:layout_marginLeft="16dp"
             android:layout_marginTop="16dp"
             android:layout_marginRight="16dp"
-            android:background="@drawable/mcdonalds">
+            android:background="@drawable/mc">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -261,7 +261,7 @@
             android:layout_marginLeft="16dp"
             android:layout_marginTop="16dp"
             android:layout_marginRight="16dp"
-            android:background="@drawable/kfc_1">
+            android:background="@drawable/kfc2">
 
             <TextView
                 android:layout_width="wrap_content"
