@@ -9,7 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="terminal1.a4.loginui.MainActivity">
+        <activity android:name=".mapa"></activity>
+        <activity android:name="terminal1.a4.listanegocios.mcdonalds" />
+        <activity android:name="terminal1.a4.listanegocios.burger" />
+        <activity android:name="terminal1.a4.listanegocios.kfc" />
+        <activity android:name="terminal1.a4.listanegocios.redbar" />
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

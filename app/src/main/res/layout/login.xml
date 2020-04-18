@@ -69,20 +69,10 @@
 
         </LinearLayout>
 
-        <Button
-            android:layout_width="180dp"
-            android:layout_height="33dp"
-            android:background="@drawable/btn_login"
-            android:textColor="@color/colorPrimary"
-            android:textSize="14dp"
-            android:layout_marginTop="15dp"
-            android:text="Limpiar"
-            android:textStyle="bold"
-            android:textAllCaps="false"
-            android:layout_gravity="center"
-            android:stateListAnimator="@null"/>
+
 
         <Button
+            android:id="@+id/button"
             android:layout_width="180dp"
             android:layout_height="wrap_content"
             android:background="@drawable/btn_login"
