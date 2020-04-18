@@ -19,6 +19,7 @@
             android:orientation="horizontal">
 
             <ImageButton
+                android:id="@+id/backButton"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 />
@@ -37,6 +38,7 @@
                 android:textStyle="bold" />
 
             <ImageButton
+                android:id="@+id/nextButton"
                 android:layout_width="40dp"
                 android:layout_height="40dp" />
 

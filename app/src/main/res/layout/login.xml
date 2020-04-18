@@ -72,7 +72,7 @@
 
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/nextButton"
             android:layout_width="180dp"
             android:layout_height="wrap_content"
             android:background="@drawable/btn_login"
