@@ -10,8 +10,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
-        android:background="#0000ff"
-        app:itemIconTint="#000000"
+        android:background="#014797"
+        app:itemIconTint="#ffffff"
         app:itemTextColor="#ffffff"
         app:menu="@menu/main_menu"
         app:labelVisibilityMode="labeled"/>
@@ -38,6 +38,7 @@
                     android:layout_width="159dp"
                     android:layout_height="52dp"
                     android:background="@drawable/micolor"
+                    android:textStyle="bold"
                     android:text="Restaurantes"
                     android:textColor="#FFFFFF"
                     tools:layout_editor_absoluteX="warp_content"
@@ -48,6 +49,7 @@
                     android:layout_height="52dp"
                     android:text="Tiendas"
                     android:background="@drawable/micolor"
+                    android:textStyle="bold"
                     android:textColor="#FFFFFF"
                     tools:layout_editor_absoluteX="warp_content"
                     tools:layout_editor_absoluteY="warp_content" />
@@ -56,20 +58,23 @@
         </TableLayout>
 
         <RelativeLayout
+            android:id="@+id/relativeLayout1"
             android:layout_width="match_parent"
             android:layout_height="115dp"
             android:layout_marginLeft="16dp"
             android:layout_marginTop="8dp"
             android:layout_marginRight="16dp"
-            android:background="@drawable/micolor">
+            android:background="@drawable/redbar1">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="14dp"
+                android:layout_marginLeft="11dp"
                 android:layout_marginTop="16dp"
                 android:text="Redbar"
+                android:background="@drawable/micolor2"
                 android:textColor="#FFFFFF"
+                android:textStyle="bold"
                 android:textSize="22dp">
             </TextView>
 
@@ -77,14 +82,17 @@
                 android:id="@+id/ratingBar1"
                 android:layout_width="wrap_content"
                 android:layout_height="41dp"
+                android:rating="4"
+                android:stepSize="0.5"
+                android:isIndicator="false"
+                android:progressTint="#efb810"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="true"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="3dp"
                 android:layout_marginEnd="5dp"
-                android:layout_marginRight="16dp"
-                android:layout_weight="0.1"
-                tools:ignore="DuplicateIds" />
+                android:layout_marginRight="10dp"
+                android:layout_weight="0.1" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -94,8 +102,10 @@
                 android:layout_marginTop="62dp"
                 android:layout_marginBottom="18dp"
                 android:text="Menú Pizza"
+                android:background="@drawable/micolor2"
                 android:textColor="#FFFFFF"
-                android:textSize="18dp"></TextView>
+                android:textStyle="bold"
+                android:textSize="20dp"></TextView>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -109,23 +119,27 @@
                 android:layout_marginBottom="28dp"
                 android:text="9,95€"
                 android:textColor="#FFFFFF"
-                android:textSize="18dp" />
+                android:textStyle="bold"
+                android:textSize="20dp" />
         </RelativeLayout>
         <RelativeLayout
+            android:id="@+id/relativeLayout2"
             android:layout_width="match_parent"
             android:layout_height="115dp"
             android:layout_marginLeft="16dp"
             android:layout_marginTop="16dp"
             android:layout_marginRight="16dp"
-            android:background="@drawable/micolor">
+            android:background="@drawable/burger1">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="14dp"
+                android:layout_marginLeft="11dp"
                 android:layout_marginTop="16dp"
                 android:text="Burger King"
+                android:background="@drawable/micolor2"
                 android:textColor="#FFFFFF"
+                android:textStyle="bold"
                 android:textSize="22dp">
             </TextView>
 
@@ -133,24 +147,30 @@
                 android:id="@+id/ratingBar2"
                 android:layout_width="wrap_content"
                 android:layout_height="41dp"
+                android:rating="4"
+                android:stepSize="0.5"
+                android:isIndicator="false"
+                android:progressTint="#efb810"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="true"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="3dp"
                 android:layout_marginEnd="5dp"
-                android:layout_marginRight="16dp"
+                android:layout_marginRight="10dp"
                 android:layout_weight="0.1" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
-                android:layout_marginLeft="14dp"
+                android:layout_marginLeft="11dp"
                 android:layout_marginTop="62dp"
                 android:layout_marginBottom="18dp"
                 android:text="Menú Steakhouse"
+                android:background="@drawable/micolor2"
                 android:textColor="#FFFFFF"
-                android:textSize="18dp"></TextView>
+                android:textStyle="bold"
+                android:textSize="20dp"></TextView>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -163,50 +183,60 @@
                 android:layout_marginRight="25dp"
                 android:layout_marginBottom="28dp"
                 android:text="8,49€"
+                android:textStyle="bold"
                 android:textColor="#FFFFFF"
-                android:textSize="18dp" />
+                android:textSize="20dp" />
         </RelativeLayout>
 
         <RelativeLayout
+            android:id="@+id/relativeLayout3"
             android:layout_width="match_parent"
             android:layout_height="115dp"
             android:layout_marginLeft="16dp"
             android:layout_marginTop="16dp"
             android:layout_marginRight="16dp"
-            android:background="@drawable/micolor">
+            android:background="@drawable/mc">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="14dp"
+                android:layout_marginLeft="11dp"
                 android:layout_marginTop="16dp"
                 android:text="McDonald's"
+                android:textStyle="bold"
+                android:background="@drawable/micolor2"
                 android:textColor="#FFFFFF"
-                android:textSize="22dp">
+                android:textSize="24dp">
             </TextView>
 
             <RatingBar
                 android:id="@+id/ratingBar3"
                 android:layout_width="wrap_content"
                 android:layout_height="41dp"
+                android:rating="4"
+                android:stepSize="0.5"
+                android:isIndicator="false"
+                android:progressTint="#efb810"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="true"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="3dp"
                 android:layout_marginEnd="5dp"
-                android:layout_marginRight="16dp"
+                android:layout_marginRight="10dp"
                 android:layout_weight="0.1" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
-                android:layout_marginLeft="14dp"
+                android:layout_marginLeft="11dp"
                 android:layout_marginTop="62dp"
                 android:layout_marginBottom="18dp"
                 android:text="McMenú"
+                android:textStyle="bold"
+                android:background="@drawable/micolor2"
                 android:textColor="#FFFFFF"
-                android:textSize="18dp"></TextView>
+                android:textSize="20dp"></TextView>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -219,24 +249,28 @@
                 android:layout_marginRight="25dp"
                 android:layout_marginBottom="28dp"
                 android:text="7,35€"
+                android:textStyle="bold"
                 android:textColor="#FFFFFF"
-                android:textSize="18dp" />
+                android:textSize="20dp" />
         </RelativeLayout>
 
         <RelativeLayout
+            android:id="@+id/relativeLayout4"
             android:layout_width="match_parent"
             android:layout_height="115dp"
             android:layout_marginLeft="16dp"
             android:layout_marginTop="16dp"
             android:layout_marginRight="16dp"
-            android:background="@drawable/micolor">
+            android:background="@drawable/kfc2">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="14dp"
+                android:layout_marginLeft="11dp"
                 android:layout_marginTop="16dp"
                 android:text="KFC"
+                android:background="@drawable/micolor2"
+                android:textStyle="bold"
                 android:textColor="#FFFFFF"
                 android:textSize="22dp">
             </TextView>
@@ -245,24 +279,30 @@
                 android:id="@+id/ratingBar4"
                 android:layout_width="wrap_content"
                 android:layout_height="41dp"
+                android:rating="4"
+                android:stepSize="0.5"
+                android:isIndicator="false"
+                android:progressTint="#efb810"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="true"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="3dp"
                 android:layout_marginEnd="5dp"
-                android:layout_marginRight="16dp"
+                android:layout_marginRight="10dp"
                 android:layout_weight="0.1" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
-                android:layout_marginLeft="14dp"
+                android:layout_marginLeft="11dp"
                 android:layout_marginTop="62dp"
                 android:layout_marginBottom="18dp"
                 android:text="Family Feast 6 Pieces"
                 android:textColor="#FFFFFF"
-                android:textSize="18dp"></TextView>
+                android:background="@drawable/micolor2"
+                android:textStyle="bold"
+                android:textSize="20dp"></TextView>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -276,14 +316,14 @@
                 android:layout_marginBottom="28dp"
                 android:text="13,99€"
                 android:textColor="#FFFFFF"
-                android:textSize="18dp" />
+                android:textStyle="bold"
+                android:textSize="20dp" />
         </RelativeLayout>
 
 
 
     </LinearLayout>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
-
 
 
 
