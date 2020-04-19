@@ -25,6 +25,12 @@
         <activity android:name="terminal1.a4.listanegocios.kfc"/>
         <activity android:name="terminal1.a4.listanegocios.MainActivity"/>
         <activity android:name="terminal1.a4.listanegocios.redbar"/>
+        <activity android:name=".servicios">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
