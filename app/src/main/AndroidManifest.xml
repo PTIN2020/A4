@@ -19,7 +19,13 @@
             </intent-filter>
         </activity>
         <activity android:name="terminal1.a4.tarjeta_embarque.Tembarque"/>
-        <activity android:name=".mapa"/>
+        <activity android:name="terminal1.a4.loginui.mapa">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+        </activity>
         <activity android:name="terminal1.a4.listanegocios.burger"/>
         <activity android:name="terminal1.a4.listanegocios.mcdonalds"/>
         <activity android:name="terminal1.a4.listanegocios.kfc"/>
