@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import terminal1.a4.listanegocios.nuevoperfil;
 import terminal1.a4.tarjeta_embarque.Tembarque;
 
 
@@ -19,6 +20,7 @@ public class Login extends AppCompatActivity {
         setContentView(R.layout.login);
 
         configureNextButton();
+        configureregistrarusuario();
     }
 
     private void configureNextButton(){
@@ -27,6 +29,15 @@ public class Login extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(Login.this, Tembarque.class));
+            }
+        });
+    }
+    private void configureregistrarusuario(){
+        Button registButton = (Button) findViewById(R.id.Registralogin);
+        registButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Login.this, nuevoperfil.class));
             }
         });
     }
