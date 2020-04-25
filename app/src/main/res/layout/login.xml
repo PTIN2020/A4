@@ -7,46 +7,54 @@
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
     android:gravity="center"
-    tools:context="terminal1.a4.loginui.MainActivity">
+    tools:context="terminal1.a4.loginui.Login">
 
 
     <LinearLayout
-        android:layout_width="272dp"
-        android:layout_height="wrap_content"
+        android:layout_width="300dp"
+        android:layout_height="363dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="58dp"
+        android:layout_marginTop="251dp"
+        android:layout_marginEnd="52dp"
+        android:layout_marginBottom="45dp"
         android:orientation="vertical">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Login"
-            android:textSize="30dp"
             android:layout_marginBottom="20dp"
+            android:text="Login"
             android:textColor="@color/black"
-            android:textStyle="bold"/>
+            android:textSize="30dp"
+            android:textStyle="bold" />
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="14dp"
             android:hint="Email"
-            android:textColorHint="@color/black"
             android:inputType="textEmailAddress"
-            android:textColor="@color/black"/>
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
+            android:textSize="14dp" />
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="14dp"
             android:hint="Contraseña"
-            android:textColorHint="@color/black"
             android:inputType="textPassword"
-            android:textColor="@color/black"/>
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
+            android:textSize="14dp" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="5dp"
             android:layout_gravity="center"
+            android:layout_margin="5dp"
             android:orientation="horizontal">
 
             <TextView
@@ -54,47 +62,64 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:text="Has olvidado la contraseña?   "
-                android:textSize="14dp"
                 android:textColor="@color/black"
-                android:textStyle="bold"/>
+                android:textSize="14dp"
+                android:textStyle="bold" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:text="Restablece"
-                android:textSize="14dp"
                 android:textColor="@color/blue"
-                android:textStyle="bold"/>
+                android:textSize="14dp"
+                android:textStyle="bold" />
 
         </LinearLayout>
 
-        <Button
-            android:layout_width="180dp"
-            android:layout_height="33dp"
-            android:background="@drawable/btn_login"
-            android:textColor="@color/colorPrimary"
-            android:textSize="14dp"
-            android:layout_marginTop="15dp"
-            android:text="Limpiar"
-            android:textStyle="bold"
-            android:textAllCaps="false"
-            android:layout_gravity="center"
-            android:stateListAnimator="@null"/>
 
         <Button
+            android:id="@+id/nextButton"
             android:layout_width="180dp"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="25dp"
             android:background="@drawable/btn_login"
+            android:stateListAnimator="@null"
+            android:text="Entra"
+            android:textAllCaps="false"
             android:textColor="@color/colorPrimary"
             android:textSize="14dp"
-            android:layout_marginTop="25dp"
-            android:text="Entra"
-            android:textStyle="bold"
-            android:textAllCaps="false"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/Registralogin"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:stateListAnimator="@null"/>
+            android:layout_marginTop="25dp"
+            android:background="@drawable/btn_login"
+            android:stateListAnimator="@null"
+            android:text="Registro"
+            android:textAllCaps="false"
+            android:textColor="@color/colorPrimary"
+            android:textSize="14dp"
+            android:textStyle="bold" />
 
     </LinearLayout>
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="134dp"
+        android:layout_height="147dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="139dp"
+        android:layout_marginTop="85dp"
+        android:layout_marginEnd="138dp"
+        android:layout_marginBottom="426dp"
+        android:src="@drawable/logo_login2" />
 
 </RelativeLayout>
