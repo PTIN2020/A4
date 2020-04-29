@@ -9,27 +9,28 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name="terminal1.a4.listanegocios.Perfil"></activity>
+        <activity android:name="terminal1.a4.listanegocios.nuevoperfil" />
+        <activity android:name="terminal1.a4.listanegocios.modificarperfil" />
+        <activity android:name="terminal1.a4.listanegocios.anadirvuelo" />
         <activity
             android:name=".Login"
-            android:screenOrientation="fullSensor"
-            android:label="Myapp">
+            android:label="Myapp"
+            android:screenOrientation="fullSensor">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="terminal1.a4.tarjeta_embarque.Tembarque"/>
-        <activity android:name=".mapa"/>
-        <activity android:name="terminal1.a4.listanegocios.burger"/>
-        <activity android:name="terminal1.a4.listanegocios.mcdonalds"/>
-        <activity android:name="terminal1.a4.listanegocios.kfc"/>
-        <activity android:name="terminal1.a4.listanegocios.MainActivity"/>
-        <activity android:name="terminal1.a4.listanegocios.redbar"/>
+        <activity android:name="terminal1.a4.tarjeta_embarque.Tembarque" />
+        <activity android:name=".mapa" />
+        <activity android:name="terminal1.a4.listanegocios.burger" />
+        <activity android:name="terminal1.a4.listanegocios.mcdonalds" />
+        <activity android:name="terminal1.a4.listanegocios.kfc" />
+        <activity android:name="terminal1.a4.listanegocios.MainActivity" />
+        <activity android:name="terminal1.a4.listanegocios.redbar" />
         <activity android:name=".servicios">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
     </application>
 
