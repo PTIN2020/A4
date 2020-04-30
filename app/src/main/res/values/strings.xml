@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">LoginUi</string>
+    <string name="stitch_client_app_id">ptin-a4-test-ciyup</string>
 </resources>
