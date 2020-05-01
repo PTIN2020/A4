@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="terminal1.a4.listanegocios.Perfil"></activity>
+        <activity android:name=".StartActivity"></activity>
+        <activity android:name=".NegocioFull" />
+        <activity android:name="terminal1.a4.listanegocios.Perfil" />
         <activity android:name="terminal1.a4.listanegocios.nuevoperfil" />
         <activity android:name="terminal1.a4.listanegocios.modificarperfil" />
         <activity android:name="terminal1.a4.listanegocios.anadirvuelo" />
@@ -30,8 +32,7 @@
         <activity android:name="terminal1.a4.listanegocios.kfc" />
         <activity android:name="terminal1.a4.listanegocios.MainActivity" />
         <activity android:name="terminal1.a4.listanegocios.redbar" />
-        <activity android:name=".servicios">
-        </activity>
+        <activity android:name=".servicios" />
     </application>
 
 </manifest>
