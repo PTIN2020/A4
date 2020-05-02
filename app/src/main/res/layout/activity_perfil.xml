@@ -29,7 +29,7 @@
                 android:stateListAnimator="@null"
                 android:text="Editar perfil"
                 android:textAllCaps="false"
-                android:textColor="@color/colorPrimary"
+                android:textColor="@drawable/txt_button"
                 android:textSize="14dp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
