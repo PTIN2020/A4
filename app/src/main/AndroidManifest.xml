@@ -12,14 +12,11 @@
         <activity android:name=".mis_vuelos">
         </activity>
         <activity android:name="terminal1.a4.listanegocios.Perfil">
-
         </activity>
         <activity android:name="terminal1.a4.listanegocios.nuevoperfil" />
         <activity android:name="terminal1.a4.listanegocios.modificarperfil">
-
         </activity>
         <activity android:name="terminal1.a4.listanegocios.anadirvuelo">
-
         </activity>
         <activity
             android:name=".Login"
@@ -34,7 +31,6 @@
         <activity android:name="terminal1.a4.tarjeta_embarque.Tembarque" />
         <activity android:name=".mapa" />
         <activity android:name="terminal1.a4.listanegocios.burger">
-
         </activity>
         <activity android:name="terminal1.a4.listanegocios.mcdonalds">
         </activity>
@@ -42,13 +38,10 @@
 
         </activity>
         <activity android:name="terminal1.a4.listanegocios.MainActivity">
-
         </activity>
         <activity android:name="terminal1.a4.listanegocios.redbar">
-
         </activity>
         <activity android:name=".servicios">
-
         </activity>
     </application>
 
