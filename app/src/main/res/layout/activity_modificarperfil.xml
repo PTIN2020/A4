@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="terminal1.a4.listanegocios.modificarperfil">
+    tools:context="terminal1.a4.listanegocios.nuevoperfil">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -25,17 +26,17 @@
                 android:layout_gravity="center"
                 android:background="@drawable/btn_login"
                 android:stateListAnimator="@null"
-                android:text="Guardar"
+                android:text="Registrarse"
                 android:textAllCaps="false"
                 android:textColor="@color/colorPrimary"
                 android:textSize="14dp"
                 android:textStyle="bold"
-                app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.497"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
-                app:layout_constraintVertical_bias="0.641" />
+                app:layout_constraintVertical_bias="0.431" />
 
             <TextView
                 android:id="@+id/textView23"
@@ -43,45 +44,26 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="28dp"
                 android:background="@color/blue"
-                android:text="Editar Datos de Usuario"
+                android:text="Registro de Usuario"
                 android:textAlignment="center"
                 android:textColor="@color/white"
                 android:textSize="30sp"
                 app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.0"
-                tools:layout_editor_absoluteX="16dp" />
-
-            <com.google.android.material.bottomnavigation.BottomNavigationView
-                android:id="@+id/bottomNavigationView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="bottom"
-                android:background="#014797"
-                app:itemIconTint="#ffffff"
-                app:itemTextColor="#ffffff"
-                app:labelVisibilityMode="labeled"
-                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="1.0"
-                app:menu="@menu/main_menu">
+                app:layout_constraintVertical_bias="0.0" />
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal"></LinearLayout>
-            </com.google.android.material.bottomnavigation.BottomNavigationView>
 
             <LinearLayout
                 android:id="@+id/linearLayout2"
-                android:layout_width="379dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="23dp"
+                android:layout_width="383dp"
+                android:layout_height="403dp"
+                android:layout_marginTop="44dp"
                 android:orientation="horizontal"
                 app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintHorizontal_bias="0.464"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView23"
                 app:layout_constraintVertical_bias="0.119">
@@ -91,100 +73,117 @@
                     android:layout_height="match_parent"
                     android:layout_gravity="right"
                     android:layout_weight="1"
-                    android:orientation="vertical">
+                    android:background="@null"
+                    android:orientation="vertical"
+                    android:weightSum="9">
 
-                    <TextView
-                        android:id="@+id/textView1"
+                    <EditText
+                        android:id="@+id/editText6"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="right"
-                        android:text="Nombre  "
-                        android:textAlignment="gravity"
-                        android:textColor="@color/black"
-                        android:textIsSelectable="false" />
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:editable="false"
+                        android:ems="10"
+                        android:inputType="textPersonName"
+                        android:text="Nombre"
+                        android:textSize="14sp" />
 
-                    <TextView
-                        android:id="@+id/textView19"
+                    <EditText
+                        android:id="@+id/editText18"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="right"
-                        android:text="1º Apellido  "
-                        android:textAlignment="gravity"
-                        android:textColor="@color/black"
-                        android:textIsSelectable="false" />
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:editable="false"
+                        android:ems="10"
+                        android:inputType="textPersonName"
+                        android:text="Apellidos"
+                        android:textSize="14sp" />
 
-                    <TextView
-                        android:id="@+id/textView20"
+                    <EditText
+                        android:id="@+id/editText3"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="right"
-                        android:text="2º Apellido  "
-                        android:textAlignment="gravity"
-                        android:textColor="@color/black"
-                        android:textIsSelectable="false" />
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:editable="false"
+                        android:ems="10"
+                        android:inputType="textPersonName"
+                        android:text="Fecha de Nacimiento"
+                        android:textSize="14sp" />
 
-                    <TextView
-                        android:id="@+id/textView2"
+                    <EditText
+                        android:id="@+id/editText22"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="right"
-                        android:text="Fecha Nacimiento  "
-                        android:textAlignment="gravity"
-                        android:textColor="@color/black" />
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:editable="false"
+                        android:ems="10"
+                        android:inputType="textPersonName"
+                        android:text="Género"
+                        android:textSize="14sp" />
 
-                    <TextView
-                        android:id="@+id/textView3"
+                    <EditText
+                        android:id="@+id/editText23"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="right"
-                        android:text="Género  "
-                        android:textAlignment="gravity"
-                        android:textColor="@color/black" />
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:editable="false"
+                        android:ems="10"
+                        android:inputType="textPersonName"
+                        android:text="Teléfono"
+                        android:textSize="14sp" />
 
-                    <TextView
-                        android:id="@+id/textView4"
+                    <EditText
+                        android:id="@+id/editText26"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="right"
-                        android:text="Teléfono  "
-                        android:textAlignment="gravity"
-                        android:textColor="@color/black" />
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:editable="false"
+                        android:ems="10"
+                        android:inputType="textPersonName"
+                        android:text="Email"
+                        android:textSize="14sp" />
 
-                    <TextView
-                        android:id="@+id/textView5"
+                    <EditText
+                        android:id="@+id/editText25"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="right"
-                        android:text="Email  "
-                        android:textAlignment="gravity"
-                        android:textColor="@color/black" />
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:editable="false"
+                        android:ems="10"
+                        android:inputType="textPersonName"
+                        android:text="Contraseña"
+                        android:textSize="14sp" />
 
-                    <TextView
-                        android:id="@+id/textView6"
+                    <EditText
+                        android:id="@+id/editText27"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="right"
-                        android:text="Contraseña  "
-                        android:textAlignment="gravity"
-                        android:textColor="@color/black" />
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:editable="false"
+                        android:ems="10"
+                        android:inputType="textPersonName"
+                        android:text="Repetir Contraseña"
+                        android:textSize="14sp" />
 
-                    <TextView
-                        android:id="@+id/textView17"
+                    <EditText
+                        android:id="@+id/editText28"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="right"
-                        android:text="Repetir Contraseña  "
-                        android:textAlignment="gravity"
-                        android:textColor="@color/black" />
-
-                    <TextView
-                        android:id="@+id/textView8"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="right"
-                        android:text="Necesidades especiales  "
-                        android:textAlignment="gravity"
-                        android:textColor="@color/black" />
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:editable="false"
+                        android:ems="10"
+                        android:inputType="textPersonName"
+                        android:text="Necesidades Especiales"
+                        android:textSize="14sp" />
 
                 </LinearLayout>
 
@@ -192,119 +191,151 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:orientation="vertical">
+                    android:background="@null"
+                    android:orientation="vertical"
+                    android:weightSum="9">
 
                     <EditText
                         android:layout_width="match_parent"
-                        android:layout_height="19dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@null"
                         android:ems="10"
+                        android:hint="Nombre"
                         android:inputType="textPersonName"
-                        android:text="Name"
+                        android:textColor="#3C3C3C"
+                        android:textColorHint="#484848"
                         android:textSize="14sp" />
 
                     <EditText
-                        android:id="@+id/editText15"
+                        android:id="@+id/editText2"
                         android:layout_width="match_parent"
-                        android:layout_height="19dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@null"
                         android:ems="10"
+                        android:hint="Apellidos"
                         android:inputType="textPersonName"
-                        android:text="1º Apellido"
+                        android:textColor="#3C3C3C"
+                        android:textColorHint="#484848"
                         android:textSize="14sp" />
 
                     <EditText
-                        android:id="@+id/editText16"
+                        android:id="@+id/editText4"
                         android:layout_width="match_parent"
-                        android:layout_height="19dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@null"
                         android:ems="10"
-                        android:inputType="textPersonName"
-                        android:text="2º Apellido"
-                        android:textSize="14sp" />
-
-                    <EditText
-                        android:id="@+id/editText12"
-                        android:layout_width="match_parent"
-                        android:layout_height="19dp"
-                        android:ems="10"
+                        android:hint="DD/MM/YYYY"
                         android:inputType="date"
+                        android:textColor="#3C3C3C"
+                        android:textColorHint="#484848"
                         android:textSize="14sp" />
 
                     <RadioGroup
                         android:layout_width="match_parent"
-                        android:layout_height="19dp"
-                        android:orientation="horizontal">
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:orientation="horizontal"
+                        android:weightSum="3">
 
                         <RadioButton
-                            android:id="@+id/radioButton2"
+                            android:id="@+id/vipSi"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
                             android:layout_weight="1"
-                            android:text="M" />
+                            android:background="@null"
+                            android:text="M"
+                            android:textColor="#3C3C3C"
+                            android:textColorHint="#FFFFFF" />
 
                         <RadioButton
-                            android:id="@+id/radioButton5"
+                            android:id="@+id/vipNo"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
                             android:layout_weight="1"
-                            android:text="F" />
+                            android:background="@null"
+                            android:text="F"
+                            android:textColor="#3C3C3C"
+                            android:textColorHint="#FFFFFF" />
 
                         <RadioButton
-                            android:id="@+id/radioButton6"
+                            android:id="@+id/radioButton"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
                             android:layout_weight="1"
-                            android:text="Otro" />
+                            android:background="@null"
+                            android:text="Otro"
+                            android:textColor="#3C3C3C"
+                            android:textColorHint="#FFFFFF" />
+
                     </RadioGroup>
 
                     <EditText
-                        android:id="@+id/editText5"
                         android:layout_width="match_parent"
-                        android:layout_height="19dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@null"
                         android:ems="10"
-                        android:inputType="number"
-                        android:textSize="14sp" />
-
-                    <TextView
-                        android:id="@+id/textView13"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Email"
-                        android:textColor="@color/black" />
-
-                    <EditText
-                        android:id="@+id/editText9"
-                        android:layout_width="match_parent"
-                        android:layout_height="19dp"
-                        android:ems="10"
-                        android:inputType="textPassword"
+                        android:hint="Teléfono"
+                        android:inputType="phone"
+                        android:textColor="#3C3C3C"
+                        android:textColorHint="#484848"
                         android:textSize="14sp" />
 
                     <EditText
-                        android:id="@+id/editText10"
+                        android:id="@+id/Serg"
                         android:layout_width="match_parent"
-                        android:layout_height="19dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@null"
                         android:ems="10"
+                        android:hint="Email"
+                        android:inputType="textEmailAddress"
+                        android:textColor="#3C3C3C"
+                        android:textColorHint="#484848"
+                        android:textSize="14sp"
+                        tools:text="@android:string/defaultVoiceMailAlphaTag" />
+
+                    <EditText
+                        android:id="@+id/editText7"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:ems="10"
+                        android:hint="Contraseña"
                         android:inputType="textPassword"
+                        android:textColor="#3C3C3C"
+                        android:textColorHint="#484848"
                         android:textSize="14sp" />
 
-                    <RadioGroup
+                    <EditText
+                        android:id="@+id/editText8"
                         android:layout_width="match_parent"
-                        android:layout_height="21dp"
-                        android:orientation="horizontal">
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:ems="10"
+                        android:hint="Contraseña"
+                        android:inputType="textPassword"
+                        android:textColor="#3C3C3C"
+                        android:textColorHint="#484848"
+                        android:textSize="14sp"
+                        tools:visibility="visible" />
 
-                        <RadioButton
-                            android:id="@+id/radioButton3"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="Si" />
+                    <CheckBox
+                        android:id="@+id/checkBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
 
-                        <RadioButton
-                            android:id="@+id/radioButton4"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="No" />
-                    </RadioGroup>
+                        android:background="@null"
+                        android:textColor="#3C3C3C"
+                        android:textColorHint="#484848"
+                        tools:text=" " />
 
                 </LinearLayout>
             </LinearLayout>

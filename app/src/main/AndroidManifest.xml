@@ -10,14 +10,23 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
+        <activity android:name=".mis_vuelos">
+        </activity>
+
+
         <activity android:name=".StartActivity"></activity>
         <activity android:name=".NegocioFull" />
 
   
         <activity android:name="terminal1.a4.listanegocios.Perfil" />
+
         <activity android:name="terminal1.a4.listanegocios.nuevoperfil" />
-        <activity android:name="terminal1.a4.listanegocios.modificarperfil" />
-        <activity android:name="terminal1.a4.listanegocios.anadirvuelo" />
+        <activity android:name="terminal1.a4.listanegocios.modificarperfil">
+
+        </activity>
+        <activity android:name="terminal1.a4.listanegocios.anadirvuelo">
+
+        </activity>
         <activity
             android:name=".Login"
             android:label="Myapp"
@@ -30,6 +39,7 @@
         </activity>
         <activity android:name="terminal1.a4.tarjeta_embarque.Tembarque" />
         <activity android:name=".mapa" />
+
         <activity android:name="terminal1.a4.listanegocios.burger" />
         <activity android:name="terminal1.a4.listanegocios.mcdonalds" />
         <activity android:name="terminal1.a4.listanegocios.kfc" />
@@ -37,6 +47,7 @@
         <activity android:name="terminal1.a4.listanegocios.redbar" />
 
         <activity android:name=".servicios" />
+
 
     </application>
 

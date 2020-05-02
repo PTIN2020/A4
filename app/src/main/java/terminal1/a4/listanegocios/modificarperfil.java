@@ -1,7 +1,9 @@
 package terminal1.a4.listanegocios;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -25,5 +27,26 @@ public class modificarperfil extends AppCompatActivity {
                 startActivity(new Intent(modificarperfil.this, Perfil.class));
             }
         });
+    }
+    @Override
+    public void onBackPressed() {
+        final AlertDialog.Builder builder = new AlertDialog.Builder(modificarperfil.this);
+        builder.setMessage("¿Seguro que quiere salir? Si sales, perderás los datos que no hayas guardado");
+        builder.setCancelable(true);
+        builder.setNegativeButton("Si", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.cancel();
+                startActivity(new Intent(modificarperfil.this,terminal1.a4.listanegocios.Perfil.class));
+            }
+        });
+        builder.setPositiveButton("No", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.cancel();
+            }
+        });
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
     }
 }

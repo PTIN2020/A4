@@ -23,7 +23,7 @@
                 android:fontFamily="cursive"
                 android:gravity="center"
                 android:text="Kfc"
-                android:textColor="#ffffff"
+                android:textColor="#000000"
                 android:textSize="42dp"
                 android:textStyle="bold" />
 
@@ -34,7 +34,7 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="20dp"
                 android:layout_marginRight="16dp"
-                android:background="@drawable/redbar2"/>
+                android:background="@drawable/redbar1"/>
         </LinearLayout>
 
 
@@ -51,7 +51,7 @@
                 android:layout_marginBottom="10dp"
                 android:fontFamily="cursive"
                 android:text="Restaurant"
-                android:textColor="#ffffff"
+                android:textColor="#000000"
                 android:textSize="38dp"
                 android:textStyle="bold" />
 
@@ -73,7 +73,7 @@
                 android:layout_marginRight="16dp"
                 android:layout_marginBottom="10dp"
                 android:text="Avinguda d'Eduard Toldrà, 22A, 08800 Vilanova i la Geltrú"
-                android:textColor="#ffffff"
+                android:textColor="#000000"
                 android:textSize="19dp"
                 android:textStyle="bold" />
 
@@ -93,7 +93,7 @@
                 android:fontFamily="cursive"
                 android:gravity="center"
                 android:text="Obert les 24 hores"
-                android:textColor="#ffffff"
+                android:textColor="#000000"
                 android:textSize="38dp"
                 android:textStyle="bold" />
 
@@ -109,7 +109,7 @@
                 android:layout_marginRight="16dp"
                 android:layout_marginBottom="10dp"
                 android:text="Carta de pizzes, amanides, hamburgueses, pastes, còctels i sushi. "
-                android:textColor="#ffffff"
+                android:textColor="#000000"
                 android:textSize="19dp"
                 android:textStyle="bold" />
 
