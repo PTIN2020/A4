@@ -37,7 +37,7 @@
                 app:layout_constraintHorizontal_bias="0.497"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
-                app:layout_constraintVertical_bias="0.637" />
+                app:layout_constraintVertical_bias="0.379" />
 
             <TextView
                 android:id="@+id/textView23"
@@ -285,24 +285,8 @@
                 </LinearLayout>
             </LinearLayout>
 
-            <Button
-                android:id="@+id/historial"
-                android:layout_width="180dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="56dp"
-                android:background="@drawable/btn_login"
-                android:stateListAnimator="@null"
-                android:text="Historial de vuelos"
-                android:textAllCaps="false"
-                android:textColor="@color/colorPrimary"
-                android:textSize="14dp"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toTopOf="@+id/button3"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.497"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
+
+
 
             android:background="?android:attr/selectableItemBackground"
 

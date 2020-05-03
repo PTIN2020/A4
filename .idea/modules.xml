@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/A-LoginUi.iml" filepath="$PROJECT_DIR$/A-LoginUi.iml" group="LoginUi" />
+      <module fileurl="file://$PROJECT_DIR$/app/A-app.iml" filepath="$PROJECT_DIR$/app/A-app.iml" group="LoginUi/app" />
       <module fileurl="file://$PROJECT_DIR$/A4.iml" filepath="$PROJECT_DIR$/A4.iml" />
-      <module fileurl="file://$PROJECT_DIR$/A4-LoginUi.iml" filepath="$PROJECT_DIR$/A4-LoginUi.iml" group="LoginUi" />
       <module fileurl="file://$PROJECT_DIR$/A4_The_Last-LoginUi.iml" filepath="$PROJECT_DIR$/A4_The_Last-LoginUi.iml" group="LoginUi" />
       <module fileurl="file://$PROJECT_DIR$/A4_ale-LoginUi.iml" filepath="$PROJECT_DIR$/A4_ale-LoginUi.iml" group="LoginUi" />
       <module fileurl="file://$PROJECT_DIR$/A4_last-LoginUi.iml" filepath="$PROJECT_DIR$/A4_last-LoginUi.iml" group="LoginUi" />

@@ -21,7 +21,10 @@ public class Login extends AppCompatActivity {
 
         configureNextButton();
         configureregistrarusuario();
+
     }
+
+
 
     private void configureNextButton(){
         Button nextButton = (Button) findViewById(R.id.nextButton);

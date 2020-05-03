@@ -1,4 +1,16 @@
 <resources>
+<<<<<<< HEAD
+    <string name="app_name">LoginUi</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="preferencias">Preferencias</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="confirmar">Confirmar</string>
+    <string name="restaurantes">Restaurantes</string>
+    <string name="tiendas">Tiendas</string>
+    <string name="otros">Otros</string>
+=======
   <string name="app_name">LoginUi</string>
     <string name="stitch_client_app_id">ptin-a4-test-ciyup</string>
 
@@ -12,4 +24,5 @@
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
 
+>>>>>>> origin/master
 </resources>
