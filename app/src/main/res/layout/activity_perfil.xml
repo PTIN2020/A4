@@ -29,7 +29,7 @@
                 android:stateListAnimator="@null"
                 android:text="Editar perfil"
                 android:textAllCaps="false"
-                android:textColor="@color/colorPrimary"
+                android:textColor="@drawable/txt_button"
                 android:textSize="14dp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
@@ -37,7 +37,7 @@
                 app:layout_constraintHorizontal_bias="0.497"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
-                app:layout_constraintVertical_bias="0.637" />
+                app:layout_constraintVertical_bias="0.418" />
 
             <TextView
                 android:id="@+id/textView23"
@@ -93,92 +93,93 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_gravity="right"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
+                    android:layout_weight="1.33"
+                    android:orientation="vertical"
+                    android:layout_marginLeft="10dp">
 
                     <TextView
                         android:id="@+id/textView1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:gravity="right"
+                        android:gravity="left"
                         android:text="Nombre  "
                         android:textAlignment="gravity"
                         android:textColor="@color/black"
-                        android:textIsSelectable="false" />
+                        android:textIsSelectable="false"
+                        android:layout_marginBottom="15dp"/>
 
                     <TextView
                         android:id="@+id/textView14"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:gravity="right"
-                        android:text="1º Apellido  "
+                        android:gravity="left"
+                        android:text="Apellidos  "
                         android:textAlignment="gravity"
                         android:textColor="@color/black"
-                        android:textIsSelectable="false" />
+                        android:textIsSelectable="false"
+                        android:layout_marginBottom="15dp"/>
 
-                    <TextView
-                        android:id="@+id/textView18"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="right"
-                        android:text="2º Apellido  "
-                        android:textAlignment="gravity"
-                        android:textColor="@color/black"
-                        android:textIsSelectable="false" />
+
 
                     <TextView
                         android:id="@+id/textView2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:gravity="right"
+                        android:gravity="left"
                         android:text="Fecha Nacimiento  "
                         android:textAlignment="gravity"
-                        android:textColor="@color/black" />
+                        android:textColor="@color/black"
+                        android:layout_marginBottom="15dp"/>
 
                     <TextView
                         android:id="@+id/textView3"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:gravity="right"
+                        android:gravity="left"
                         android:text="Género  "
                         android:textAlignment="gravity"
-                        android:textColor="@color/black" />
+                        android:textColor="@color/black"
+                        android:layout_marginBottom="15dp"/>
 
                     <TextView
                         android:id="@+id/textView4"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:gravity="right"
+                        android:gravity="left"
                         android:text="Teléfono  "
                         android:textAlignment="gravity"
-                        android:textColor="@color/black" />
+                        android:textColor="@color/black"
+                        android:layout_marginBottom="15dp"/>
 
                     <TextView
                         android:id="@+id/textView5"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:gravity="right"
+                        android:gravity="left"
                         android:text="Email  "
                         android:textAlignment="gravity"
-                        android:textColor="@color/black" />
+                        android:textColor="@color/black"
+                        android:layout_marginBottom="15dp"/>
 
                     <TextView
                         android:id="@+id/textView7"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:gravity="right"
+                        android:gravity="left"
                         android:text="Vip  "
                         android:textAlignment="gravity"
-                        android:textColor="@color/black" />
+                        android:textColor="@color/black"
+                        android:layout_marginBottom="15dp"/>
 
                     <TextView
                         android:id="@+id/textView8"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:gravity="right"
+                        android:gravity="left"
                         android:text="Necesidades especiales  "
                         android:textAlignment="gravity"
-                        android:textColor="@color/black" />
+                        android:textColor="@color/black"
+                        android:layout_marginBottom="15dp"/>
 
                 </LinearLayout>
 
@@ -193,7 +194,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Nombre"
-                        android:textColor="@color/black" />
+                        android:textColor="@color/black"
+                        android:layout_marginBottom="15dp"/>
 
                     <EditText
                         android:id="@+id/editText13"
@@ -202,107 +204,63 @@
                         android:ems="10"
                         android:inputType="textPersonName"
                         android:text="1º Apellido"
-                        android:textSize="14sp" />
+                        android:textSize="14sp"
+                        android:layout_marginBottom="15dp"/>
 
-                    <EditText
-                        android:id="@+id/editText14"
-                        android:layout_width="match_parent"
-                        android:layout_height="19dp"
-                        android:ems="10"
-                        android:inputType="textPersonName"
-                        android:text="2º Apellido"
-                        android:textSize="14sp" />
+
 
                     <TextView
                         android:id="@+id/textView10"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Fecha Nacimiento"
-                        android:textColor="@color/black" />
+                        android:textColor="@color/black"
+                        android:layout_marginBottom="15dp"/>
 
                     <TextView
                         android:id="@+id/textView11"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Género"
-                        android:textColor="@color/black" />
+                        android:textColor="@color/black"
+                        android:layout_marginBottom="15dp"/>
 
                     <TextView
                         android:id="@+id/textView12"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Teléfono"
-                        android:textColor="@color/black" />
+                        android:textColor="@color/black"
+                        android:layout_marginBottom="15dp"/>
 
                     <TextView
                         android:id="@+id/textView13"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Email"
-                        android:textColor="@color/black" />
+                        android:textColor="@color/black"
+                        android:layout_marginBottom="15dp"/>
 
-                    <RadioGroup
-                        android:layout_width="match_parent"
-                        android:layout_height="20dp"
-                        android:orientation="horizontal">
-
-                        <RadioButton
-                            android:id="@+id/vipSi"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="Si" />
-
-                        <RadioButton
-                            android:id="@+id/vipNo"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="No" />
-
-                    </RadioGroup>
-
-                    <RadioGroup
+                    <CheckBox
+                        android:text="Si"
                         android:layout_width="match_parent"
                         android:layout_height="21dp"
-                        android:orientation="horizontal">
+                        android:layout_marginBottom="15dp">
 
-                        <RadioButton
-                            android:id="@+id/radioButton3"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="Si" />
+                    </CheckBox>
 
-                        <RadioButton
-                            android:id="@+id/radioButton4"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="No" />
-                    </RadioGroup>
+                    <CheckBox
+                        android:text="Si"
+                        android:layout_width="match_parent"
+                        android:layout_height="21dp"
+                        android:layout_marginBottom="15dp">
+
+                    </CheckBox>
 
                 </LinearLayout>
             </LinearLayout>
 
-            <Button
-                android:id="@+id/historial"
-                android:layout_width="180dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="56dp"
-                android:background="@drawable/btn_login"
-                android:stateListAnimator="@null"
-                android:text="Historial de vuelos"
-                android:textAllCaps="false"
-                android:textColor="@color/colorPrimary"
-                android:textSize="14dp"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toTopOf="@+id/button3"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.497"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
+
 
             android:background="?android:attr/selectableItemBackground"
 
