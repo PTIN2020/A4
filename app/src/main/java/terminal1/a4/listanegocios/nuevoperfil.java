@@ -17,7 +17,7 @@ public class nuevoperfil extends AppCompatActivity {
         setContentView(R.layout.activity_nuevoperfil);
 
         configureregistrarse();
-        configurepreferncias();
+
     }
 
 
@@ -32,13 +32,5 @@ public class nuevoperfil extends AppCompatActivity {
         });
     }
 
-    private void configurepreferncias() {
-        Button pre = (Button) findViewById(R.id.buttonprefer);
-        pre.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(nuevoperfil.this, Preferencias.class));
-            }
-        });
-    }
+
 }

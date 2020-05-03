@@ -290,22 +290,7 @@
                 </LinearLayout>
             </LinearLayout>
 
-            <Button
-                android:id="@+id/buttonprefer"
-                android:layout_width="180dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:background="@drawable/btn_login"
-                android:stateListAnimator="@null"
-                android:text="Preferencias"
-                android:textAllCaps="false"
-                android:textColor="@color/colorPrimary"
-                android:textSize="14dp"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/registrarse" />
+
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
