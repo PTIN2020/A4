@@ -36,25 +36,32 @@
             android:layout_height="match_parent"
             app:fab_label="Centrar"
             android:src="@drawable/ic_action_centrar"
-            app:fab_colorNormal="@color/blue"></com.github.clans.fab.FloatingActionButton>
+            app:fab_colorNormal="@color/blue">
+
+        </com.github.clans.fab.FloatingActionButton>
 
         <com.github.clans.fab.FloatingActionButton
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:fab_label="Restaurantes"
             android:src="@drawable/ic_menu_restaurants"
-            app:fab_colorNormal="@color/blue"></com.github.clans.fab.FloatingActionButton>
+            app:fab_colorNormal="@color/blue">
+
+        </com.github.clans.fab.FloatingActionButton>
 
         <com.github.clans.fab.FloatingActionButton
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:fab_label="Negocios"
             android:src="@drawable/ic_menu_tiendas"
-            app:fab_colorNormal="@color/blue"></com.github.clans.fab.FloatingActionButton>
+            app:fab_colorNormal="@color/blue">
+
+        </com.github.clans.fab.FloatingActionButton>
 
     </com.github.clans.fab.FloatingActionMenu>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#014797"

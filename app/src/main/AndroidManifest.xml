@@ -40,7 +40,7 @@
         <activity android:name="terminal1.a4.listanegocios.burger" />
         <activity android:name="terminal1.a4.listanegocios.mcdonalds" />
         <activity android:name="terminal1.a4.listanegocios.kfc" />
-        <activity android:name="terminal1.a4.listanegocios.MainActivity" />
+        <activity android:name="terminal1.a4.listanegocios.ListaNegocios" />
         <activity android:name="terminal1.a4.listanegocios.redbar" />
 
         <activity android:name=".servicios" />
