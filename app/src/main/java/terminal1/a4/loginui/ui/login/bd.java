@@ -26,7 +26,7 @@ import terminal1.a4.loginui.R;
 import terminal1.a4.loginui.ui.login.LoginViewModel;
 import terminal1.a4.loginui.ui.login.LoginViewModelFactory;
 
-public class LoginActivity extends AppCompatActivity {
+class LoginActivity extends AppCompatActivity {
 
     private LoginViewModel loginViewModel;
 
