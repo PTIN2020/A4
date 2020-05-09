@@ -50,47 +50,42 @@
             android:textColorHint="@color/black"
             android:textSize="14dp" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_margin="5dp"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="Has olvidado la contraseña?   "
-                android:textColor="@color/black"
-                android:textSize="14dp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="Restablece"
-                android:textColor="@color/blue"
-                android:textSize="14dp"
-                android:textStyle="bold" />
-
-        </LinearLayout>
-
 
         <Button
             android:id="@+id/nextButton"
-            android:layout_width="180dp"
+            android:layout_width="298dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="25dp"
             android:background="@drawable/btn_login"
             android:stateListAnimator="@null"
-            android:text="Entra"
+            android:text="Entrar"
             android:textAllCaps="false"
-            android:textColor="@color/colorPrimary"
+            android:textColor="@drawable/txt_button"
             android:textSize="14dp"
             android:textStyle="bold" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="53dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:gravity="center"
+                android:text="Has olvidado la contraseña?   "
+                android:textColor="@color/blue"
+                android:textSize="14dp"
+                android:textStyle="bold"
+
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.495"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.852" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
         <Button
             android:id="@+id/Registralogin"
@@ -100,10 +95,12 @@
             android:layout_marginTop="25dp"
             android:background="@drawable/btn_login"
             android:stateListAnimator="@null"
-            android:text="Registro"
+            android:text="Nuevo Usuario"
             android:textAllCaps="false"
-            android:textColor="@color/colorPrimary"
+
             android:textSize="14dp"
+
+            android:textColor="@drawable/txt_button"
             android:textStyle="bold" />
 
     </LinearLayout>

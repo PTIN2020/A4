@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true">
     <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
@@ -79,7 +80,9 @@
                     android:background="@drawable/micolor2"
                     android:textColor="#FFFFFF"
                     android:textStyle="bold"
-                    android:textSize="20dp"></TextView>
+                    android:textSize="20dp">
+
+                </TextView>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -299,16 +302,18 @@
                 android:layout_gravity="bottom"
                 android:layout_marginTop="50dp"
                 >
+
                 <Button
                     android:id="@+id/button"
                     android:layout_width="159dp"
                     android:layout_height="52dp"
                     android:background="@drawable/micolor"
-                    android:textStyle="bold"
                     android:text="Restaurantes"
-                    android:textColor="#FFFFFF"
+                    android:textColor="@drawable/txt_button"
+                    android:textStyle="bold"
                     tools:layout_editor_absoluteX="warp_content"
                     tools:layout_editor_absoluteY="warp_content" />
+
                 <Button
                     android:id="@+id/button2"
                     android:layout_width="159dp"
@@ -316,7 +321,7 @@
                     android:text="Tiendas"
                     android:background="@drawable/micolor"
                     android:textStyle="bold"
-                    android:textColor="#FFFFFF"
+                    android:textColor="@drawable/txt_button"
                     tools:layout_editor_absoluteX="warp_content"
                     tools:layout_editor_absoluteY="warp_content" />
 
