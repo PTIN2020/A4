@@ -20,6 +20,7 @@
             android:layout_height="match_parent">
 
             <Button
+                android:onClick="ShowPopUp"
                 android:id="@+id/registrarse"
                 android:layout_width="180dp"
                 android:layout_height="wrap_content"
