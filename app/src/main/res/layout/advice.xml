@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="350dp"
+        android:layout_height="350dp"
+        android:layout_gravity="center"
+        android:background="@drawable/fondoredondeado"
+        tools:layout_editor_absoluteX="30dp"
+        tools:layout_editor_absoluteY="154dp">
+
+        <ImageView
+            android:id="@+id/advice"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="18dp"
+            android:layout_centerHorizontal="true"
+            android:src="@mipmap/exclamacion"></ImageView>
+
+        <TextView
+            android:id="@+id/Desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Es guardarán totes les teves dades."
+            android:textSize="20sp"
+            android:layout_below="@+id/advice"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="18dp"></TextView>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/Desc">
+
+            <Button
+
+                android:id="@+id/accept_policy"
+                android:layout_width="123dp"
+                android:layout_height="50dp"
+                android:layout_below="@+id/Desc"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/btn_circle"
+                android:text="Acceptar"
+                android:textColor="@drawable/txt_button"></Button>
+
+            <Button
+                android:id="@+id/deny_policy"
+                android:layout_width="123dp"
+                android:layout_height="50dp"
+                android:layout_below="@+id/Desc"
+                android:layout_marginRight="40dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/btn_circle"
+                android:text="Denegar"
+                android:textColor="@drawable/txt_button"></Button>
+        </LinearLayout>
+
+
+
+    </RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
