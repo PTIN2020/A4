@@ -17,11 +17,7 @@ public class nuevoperfil extends AppCompatActivity {
         setContentView(R.layout.activity_nuevoperfil);
 
         configureregistrarse();
-
     }
-
-
-
     private void configureregistrarse(){
         Button reg = (Button) findViewById(R.id.registrarse);
         reg.setOnClickListener(new View.OnClickListener() {
@@ -31,6 +27,4 @@ public class nuevoperfil extends AppCompatActivity {
             }
         });
     }
-
-
 }
