@@ -9,11 +9,11 @@
       <module fileurl="file://$PROJECT_DIR$/A4_last-LoginUi.iml" filepath="$PROJECT_DIR$/A4_last-LoginUi.iml" group="LoginUi" />
       <module fileurl="file://$PROJECT_DIR$/A4_sprint3-LoginUi.iml" filepath="$PROJECT_DIR$/A4_sprint3-LoginUi.iml" group="LoginUi" />
       <module fileurl="file://$PROJECT_DIR$/A4_ss-LoginUi.iml" filepath="$PROJECT_DIR$/A4_ss-LoginUi.iml" group="LoginUi" />
-      <module fileurl="file://$PROJECT_DIR$/E-LoginUi.iml" filepath="$PROJECT_DIR$/E-LoginUi.iml" group="LoginUi" />
       <module fileurl="file://$PROJECT_DIR$/LoginUi.iml" filepath="$PROJECT_DIR$/LoginUi.iml" group="LoginUi" />
       <module fileurl="file://$PROJECT_DIR$/Proyecto3-LoginUi.iml" filepath="$PROJECT_DIR$/Proyecto3-LoginUi.iml" group="LoginUi" />
       <module fileurl="file://$PROJECT_DIR$/Sprint3 Alejandro+SergioSantamariaz-LoginUi.iml" filepath="$PROJECT_DIR$/Sprint3 Alejandro+SergioSantamariaz-LoginUi.iml" group="LoginUi" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" group="LoginUi/app" />
+      <module fileurl="file://$PROJECT_DIR$/fi-LoginUi.iml" filepath="$PROJECT_DIR$/fi-LoginUi.iml" group="LoginUi" />
     </modules>
   </component>
 </project>
