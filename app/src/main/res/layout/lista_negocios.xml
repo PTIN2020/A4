@@ -16,320 +16,46 @@
         app:menu="@menu/main_menu"
         app:labelVisibilityMode="labeled"/>
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="600dp"
         android:orientation="vertical">
 
-        <TableLayout
-            android:layout_width="match_parent"
+        <TextView
+            android:id="@+id/text_view_result"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:stretchColumns="0,1"
-            android:paddingBottom="16dp"
-            android:paddingLeft="16dp"
-            android:paddingRight="16dp"
-            android:paddingTop="16dp">
+            android:textColor="@android:color/black"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/button_parse"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="68dp"
+            android:layout_marginBottom="60dp"
+            android:text="parse"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/button_post"
+            app:layout_constraintHorizontal_bias="0.272"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/button_post"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="72dp"
+            android:layout_marginBottom="60dp"
+            android:text="POST"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
 
 
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <RelativeLayout
-                android:id="@+id/relativeLayout1"
-                android:layout_width="match_parent"
-                android:layout_height="115dp"
-                android:layout_marginLeft="16dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginRight="16dp"
-                android:background="@drawable/redbar1">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="11dp"
-                    android:layout_marginTop="16dp"
-                    android:text="Redbar"
-                    android:background="@drawable/micolor2"
-                    android:textColor="#FFFFFF"
-                    android:textStyle="bold"
-                    android:textSize="22dp">
-                </TextView>
-
-                <RatingBar
-                    android:id="@+id/ratingBar1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="41dp"
-                    android:rating="4"
-                    android:stepSize="0.5"
-                    android:isIndicator="false"
-                    android:progressTint="#efb810"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentEnd="true"
-                    android:layout_alignParentRight="true"
-                    android:layout_marginTop="3dp"
-                    android:layout_marginEnd="5dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_weight="0.1" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
-                    android:layout_marginLeft="14dp"
-                    android:layout_marginTop="62dp"
-                    android:layout_marginBottom="18dp"
-                    android:text="Menú Pizza"
-                    android:background="@drawable/micolor2"
-                    android:textColor="#FFFFFF"
-                    android:textStyle="bold"
-                    android:textSize="20dp">
-
-                </TextView>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="35dp"
-                    android:layout_alignParentEnd="true"
-                    android:layout_alignParentRight="true"
-                    android:layout_alignParentBottom="true"
-                    android:layout_marginTop="62dp"
-                    android:layout_marginEnd="25dp"
-                    android:layout_marginRight="25dp"
-                    android:layout_marginBottom="28dp"
-                    android:text="9,95€"
-                    android:textColor="#FFFFFF"
-                    android:textStyle="bold"
-                    android:textSize="20dp" />
-            </RelativeLayout>
-            <RelativeLayout
-                android:id="@+id/relativeLayout2"
-                android:layout_width="match_parent"
-                android:layout_height="115dp"
-                android:layout_marginLeft="16dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginRight="16dp"
-                android:background="@drawable/burger1">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="11dp"
-                    android:layout_marginTop="16dp"
-                    android:text="Burger King"
-                    android:background="@drawable/micolor2"
-                    android:textColor="#FFFFFF"
-                    android:textStyle="bold"
-                    android:textSize="22dp">
-                </TextView>
-
-                <RatingBar
-                    android:id="@+id/ratingBar2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="41dp"
-                    android:rating="4"
-                    android:stepSize="0.5"
-                    android:isIndicator="false"
-                    android:progressTint="#efb810"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentEnd="true"
-                    android:layout_alignParentRight="true"
-                    android:layout_marginTop="3dp"
-                    android:layout_marginEnd="5dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_weight="0.1" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
-                    android:layout_marginLeft="11dp"
-                    android:layout_marginTop="62dp"
-                    android:layout_marginBottom="18dp"
-                    android:text="Menú Steakhouse"
-                    android:background="@drawable/micolor2"
-                    android:textColor="#FFFFFF"
-                    android:textStyle="bold"
-                    android:textSize="20dp"></TextView>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="35dp"
-                    android:layout_alignParentEnd="true"
-                    android:layout_alignParentRight="true"
-                    android:layout_alignParentBottom="true"
-                    android:layout_marginTop="62dp"
-                    android:layout_marginEnd="25dp"
-                    android:layout_marginRight="25dp"
-                    android:layout_marginBottom="28dp"
-                    android:text="8,49€"
-                    android:textStyle="bold"
-                    android:textColor="#FFFFFF"
-                    android:textSize="20dp" />
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:id="@+id/relativeLayout3"
-                android:layout_width="match_parent"
-                android:layout_height="115dp"
-                android:layout_marginLeft="16dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginRight="16dp"
-                android:background="@drawable/mc">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="11dp"
-                    android:layout_marginTop="16dp"
-                    android:text="McDonald's"
-                    android:textStyle="bold"
-                    android:background="@drawable/micolor2"
-                    android:textColor="#FFFFFF"
-                    android:textSize="24dp">
-                </TextView>
-
-                <RatingBar
-                    android:id="@+id/ratingBar3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="41dp"
-                    android:rating="4"
-                    android:stepSize="0.5"
-                    android:isIndicator="false"
-                    android:progressTint="#efb810"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentEnd="true"
-                    android:layout_alignParentRight="true"
-                    android:layout_marginTop="3dp"
-                    android:layout_marginEnd="5dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_weight="0.1" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
-                    android:layout_marginLeft="11dp"
-                    android:layout_marginTop="62dp"
-                    android:layout_marginBottom="18dp"
-                    android:text="McMenú"
-                    android:textStyle="bold"
-                    android:background="@drawable/micolor2"
-                    android:textColor="#FFFFFF"
-                    android:textSize="20dp"></TextView>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="35dp"
-                    android:layout_alignParentEnd="true"
-                    android:layout_alignParentRight="true"
-                    android:layout_alignParentBottom="true"
-                    android:layout_marginTop="62dp"
-                    android:layout_marginEnd="25dp"
-                    android:layout_marginRight="25dp"
-                    android:layout_marginBottom="28dp"
-                    android:text="7,35€"
-                    android:textStyle="bold"
-                    android:textColor="#FFFFFF"
-                    android:textSize="20dp" />
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:id="@+id/relativeLayout4"
-                android:layout_width="match_parent"
-                android:layout_height="115dp"
-                android:layout_marginLeft="16dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginRight="16dp"
-                android:background="@drawable/kfc2">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="11dp"
-                    android:layout_marginTop="16dp"
-                    android:text="KFC"
-                    android:background="@drawable/micolor2"
-                    android:textStyle="bold"
-                    android:textColor="#FFFFFF"
-                    android:textSize="22dp">
-                </TextView>
-
-                <RatingBar
-                    android:id="@+id/ratingBar4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="41dp"
-                    android:rating="4"
-                    android:stepSize="0.5"
-                    android:isIndicator="false"
-                    android:progressTint="#efb810"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentEnd="true"
-                    android:layout_alignParentRight="true"
-                    android:layout_marginTop="3dp"
-                    android:layout_marginEnd="5dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_weight="0.1" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
-                    android:layout_marginLeft="11dp"
-                    android:layout_marginTop="62dp"
-                    android:layout_marginBottom="18dp"
-                    android:text="Family Feast 6 Pieces"
-                    android:textColor="#FFFFFF"
-                    android:background="@drawable/micolor2"
-                    android:textStyle="bold"
-                    android:textSize="20dp"></TextView>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="35dp"
-                    android:layout_alignParentEnd="true"
-                    android:layout_alignParentRight="true"
-                    android:layout_alignParentBottom="true"
-                    android:layout_marginTop="62dp"
-                    android:layout_marginEnd="25dp"
-                    android:layout_marginRight="25dp"
-                    android:layout_marginBottom="28dp"
-                    android:text="13,99€"
-                    android:textColor="#FFFFFF"
-                    android:textStyle="bold"
-                    android:textSize="20dp" />
-            </RelativeLayout>
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_gravity="bottom"
-                android:layout_marginTop="50dp"
-                >
-
-                <Button
-                    android:id="@+id/button"
-                    android:layout_width="159dp"
-                    android:layout_height="52dp"
-                    android:background="@drawable/micolor"
-                    android:text="Restaurantes"
-                    android:textColor="@drawable/txt_button"
-                    android:textStyle="bold"
-                    tools:layout_editor_absoluteX="warp_content"
-                    tools:layout_editor_absoluteY="warp_content" />
-
-                <Button
-                    android:id="@+id/button2"
-                    android:layout_width="159dp"
-                    android:layout_height="52dp"
-                    android:text="Tiendas"
-                    android:background="@drawable/micolor"
-                    android:textStyle="bold"
-                    android:textColor="@drawable/txt_button"
-                    tools:layout_editor_absoluteX="warp_content"
-                    tools:layout_editor_absoluteY="warp_content" />
-
-            </TableRow>
-        </TableLayout>
-
-
-    </LinearLayout>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
 

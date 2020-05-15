@@ -72,6 +72,7 @@ public class mapa extends AppCompatActivity {
         mapController.setZoom(18);
         mapController.setCenter(startPoint);
 
+
         BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottom_navigation);
 
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
