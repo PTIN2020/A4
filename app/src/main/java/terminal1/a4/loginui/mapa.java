@@ -63,6 +63,7 @@ public class mapa extends AppCompatActivity {
                 // Manifest.permission.ACCESS_FINE_LOCATION,
                 // WRITE_EXTERNAL_STORAGE is required in order to show the map
                 Manifest.permission.WRITE_EXTERNAL_STORAGE
+
         });
 
         // geoloc palma

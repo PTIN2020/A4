@@ -108,6 +108,7 @@ public class ListaNegocios extends AppCompatActivity {
         }
 
         //mTextViewResult.setText("Response: " + pasajero.toString());
+
         JsonObjectRequest jsonRequest = new JsonObjectRequest(Request.Method.POST, url, pasajero, new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {
