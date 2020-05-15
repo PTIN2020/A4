@@ -11,7 +11,8 @@
         android:layout_gravity="center"
         android:background="@drawable/fondoredondeado"
         tools:layout_editor_absoluteX="30dp"
-        tools:layout_editor_absoluteY="154dp">
+        tools:layout_editor_absoluteY="154dp"
+        tools:ignore="MissingConstraints">
 
         <ImageView
             android:id="@+id/advice"
