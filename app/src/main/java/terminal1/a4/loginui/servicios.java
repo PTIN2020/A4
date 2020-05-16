@@ -57,7 +57,7 @@ public class servicios extends AppCompatActivity {
     }
 
     private void botontransporte(){
-        Button buttransporte = (Button) findViewById(R.id.button3_res);
+        Button buttransporte = (Button) findViewById(R.id.button3);
         buttransporte.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
