@@ -50,13 +50,13 @@
 
                 <Button
                     android:id="@+id/button3"
-                    android:layout_marginTop="20dp"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:layout_marginTop="20dp"
                     android:background="@drawable/btn_circle"
                     android:gravity="center"
-                    android:textColor="@drawable/txt_button"
-                    android:text="Solicitar transporte" />
+                    android:text="Solicitar Vehiculo"
+                    android:textColor="@drawable/txt_button" />
 
             </TableRow>
             <TableRow
