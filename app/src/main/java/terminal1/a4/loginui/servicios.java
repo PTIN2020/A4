@@ -61,8 +61,7 @@ public class servicios extends AppCompatActivity {
         buttransporte.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // CheckBox checkBox = findViewById(R.id.checkBoxminus);
-                // if(true){
+
                 if (buttransporte.getText().toString().equals("Solicitar Vehiculo")){
                     buttransporte.setText("Cancelar Vehiculo");
                     final AlertDialog.Builder builder = new AlertDialog.Builder(servicios.this);
@@ -92,18 +91,6 @@ public class servicios extends AppCompatActivity {
                     alertDialog.show();
                 }
             }
-             /*  else{
-                   final AlertDialog.Builder builder = new AlertDialog.Builder(servicios.this);
-                    builder.setMessage("No puede solicitar vehiculo si no es un pasajero con necesidades especiales.");
-                    builder.setCancelable(true);
-                    AlertDialog alertDialog = builder.create();
-                    alertDialog.show();
-                }
-
-              */
-
-
-            //}
         });
     }
 

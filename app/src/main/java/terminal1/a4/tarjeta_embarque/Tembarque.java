@@ -42,6 +42,8 @@ public class Tembarque extends AppCompatActivity {
                         break;
                     case R.id.ic_servicios:
                         Intent intent2 = new Intent(Tembarque.this, servicios.class);
+                        CheckBox checkBox = findViewById(R.id.checkBoxminus);
+                        intent2.putExtra("grade1", checkBox.isChecked());
                         startActivity(intent2);
                         break;
                     case R.id.ic_tiendas:
@@ -63,8 +65,6 @@ public class Tembarque extends AppCompatActivity {
         buttransporte.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                CheckBox checkBox = findViewById(R.id.checkBoxminus);
-                if(checkBox.isChecked()){
                     if (buttransporte.getText().toString().equals("Solicitar Vehiculo")){
                         buttransporte.setText("Cancelar Vehiculo");
                         final AlertDialog.Builder builder = new AlertDialog.Builder(Tembarque.this);
@@ -93,14 +93,6 @@ public class Tembarque extends AppCompatActivity {
                         AlertDialog alertDialog = builder.create();
                         alertDialog.show();
                     }
-                } else{
-                    final AlertDialog.Builder builder = new AlertDialog.Builder(Tembarque.this);
-                    builder.setMessage("No puede solicitar vehiculo si no es un pasajero con necesidades especiales.");
-                    builder.setCancelable(true);
-                    AlertDialog alertDialog = builder.create();
-                    alertDialog.show();
-                }
-
 
             }
         });
