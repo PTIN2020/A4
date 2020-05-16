@@ -179,6 +179,21 @@
             </RelativeLayout>
         </TableLayout>
 
+        <Button
+            android:id="@+id/reserva_vuelo"
+            android:layout_width="115dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:layout_gravity="center"
+            android:background="@drawable/btn_login"
+            android:stateListAnimator="@null"
+            android:text="Reserva vuelo"
+            android:textAllCaps="false"
+            android:textSize="14dp"
+            android:textColor="@drawable/txt_button"
+            android:textStyle="bold" />
+
+
     </LinearLayout>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

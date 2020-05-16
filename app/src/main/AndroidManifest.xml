@@ -3,36 +3,28 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="terminal1.a4.loginui">
 
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
-
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"  />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
-        android:usesCleartextTraffic="true"
-        tools:replace="android:allowBackup"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-
-        <activity android:name=".mis_vuelos">
-        </activity>
-
-        <activity android:name=".StartActivity"/>
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true"
+        tools:replace="android:allowBackup">
+        <activity android:name=".reserva_vuelos"></activity>
+        <activity android:name=".mis_vuelos"></activity>
+        <activity android:name=".StartActivity" />
         <activity android:name=".NegocioFull" />
-
-  
         <activity android:name="terminal1.a4.listanegocios.Perfil" />
-
         <activity android:name="terminal1.a4.listanegocios.nuevoperfil" />
-        <activity android:name="terminal1.a4.listanegocios.modificarperfil">
-        </activity>
-        <activity android:name="terminal1.a4.listanegocios.anadirvuelo">
-        </activity>
+        <activity android:name="terminal1.a4.listanegocios.modificarperfil"></activity>
+        <activity android:name="terminal1.a4.listanegocios.anadirvuelo"></activity>
         <activity
             android:name=".Login"
             android:label="Myapp"
@@ -45,13 +37,11 @@
         </activity>
         <activity android:name="terminal1.a4.tarjeta_embarque.Tembarque" />
         <activity android:name=".mapa" />
-
         <activity android:name="terminal1.a4.listanegocios.burger" />
         <activity android:name="terminal1.a4.listanegocios.mcdonalds" />
         <activity android:name="terminal1.a4.listanegocios.kfc" />
         <activity android:name="terminal1.a4.listanegocios.ListaNegocios" />
         <activity android:name="terminal1.a4.listanegocios.redbar" />
-
         <activity android:name=".servicios" />
         <activity android:name="terminal1.a4.listanegocios.advice" />
     </application>

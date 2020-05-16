@@ -16,6 +16,7 @@
       <module fileurl="file://$PROJECT_DIR$/Proyecto3-LoginUi.iml" filepath="$PROJECT_DIR$/Proyecto3-LoginUi.iml" group="LoginUi" />
       <module fileurl="file://$PROJECT_DIR$/Sprint3 Alejandro+SergioSantamariaz-LoginUi.iml" filepath="$PROJECT_DIR$/Sprint3 Alejandro+SergioSantamariaz-LoginUi.iml" group="LoginUi" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" group="LoginUi/app" />
+      <module fileurl="file://$PROJECT_DIR$/reserva_vuelos-LoginUi.iml" filepath="$PROJECT_DIR$/reserva_vuelos-LoginUi.iml" group="LoginUi" />
     </modules>
   </component>
 </project>

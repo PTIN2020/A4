@@ -23,6 +23,7 @@ public class servicios extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_servicios);
+
         botontransporte();
         BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottom_navigation);
 
@@ -56,7 +57,7 @@ public class servicios extends AppCompatActivity {
     }
 
     private void botontransporte(){
-        Button buttransporte = (Button) findViewById(R.id.button3);
+        Button buttransporte = (Button) findViewById(R.id.button3_res);
         buttransporte.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".reserva_vuelos">
+
+    <TextView
+        android:id="@+id/reservavuelos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="35dp"
+        android:textColor="#000000"
+        android:textSize="32dp"
+        android:textStyle="bold"
+        android:fontFamily="sans-serif-smallcaps"
+        android:text="Reserva vuelos" />
+
+
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="55dp"
+            android:text="Ida y vuelta"
+            android:textColor="@color/black"
+            android:textStyle="bold"/>
+
+        <RadioButton
+            android:id="@+id/restaura"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+    </RadioGroup>
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:layout_marginTop="15dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="55dp"
+            android:text="Solo ida"
+            android:textColor="@color/black"
+            android:textStyle="bold"/>
+
+        <RadioButton
+            android:id="@+id/tiendas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"/>
+
+    </RadioGroup>
+
+
+
+    <EditText
+        android:id="@+id/ida_v"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:ems="10"
+        android:text="ida"
+        android:inputType="date"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        android:textSize="14dp" />
+
+    <EditText
+        android:id="@+id/s_ida"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:ems="10"
+        android:text="vuelta"
+        android:inputType="date"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        android:textSize="14dp"/>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/Cancela"
+            android:layout_width="115dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:layout_marginLeft="80dp"
+            android:background="@drawable/btn_login"
+            android:stateListAnimator="@null"
+            android:text="Cancelar"
+            android:textAllCaps="false"
+            android:textSize="14dp"
+            android:textColor="@drawable/txt_button"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/Reservar"
+            android:layout_width="115dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:layout_marginLeft="20dp"
+            android:background="@drawable/btn_login"
+            android:stateListAnimator="@null"
+            android:text="Reservar"
+            android:textAllCaps="false"
+            android:textSize="14dp"
+            android:textColor="@drawable/txt_button"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/consultar"
+        android:layout_width="115dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:layout_gravity="center"
+        android:background="@drawable/btn_login"
+        android:stateListAnimator="@null"
+        android:text="Consultar"
+        android:textAllCaps="false"
+        android:textSize="14dp"
+        android:textColor="@drawable/txt_button"
+        android:textStyle="bold" />
+
+
+</LinearLayout>
