@@ -7,7 +7,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
 import android.view.MenuItem;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -29,6 +28,10 @@ import org.osmdroid.config.Configuration;
 import org.osmdroid.tileprovider.tilesource.TileSourceFactory;
 import org.osmdroid.util.GeoPoint;
 import org.osmdroid.views.MapView;
+import org.osmdroid.views.overlay.ItemizedIconOverlay;
+import org.osmdroid.views.overlay.ItemizedOverlayWithFocus;
+import org.osmdroid.views.overlay.Marker;
+import org.osmdroid.views.overlay.OverlayItem;
 
 import java.util.ArrayList;
 
@@ -57,7 +60,6 @@ public class mapa extends AppCompatActivity {
 
         map = (MapView) findViewById(R.id.map);
         map.setTileSource(TileSourceFactory.MAPNIK);
-
         requestPermissionsIfNecessary(new String[] {
                 // if you need to show the current location, uncomment the line below
                 // Manifest.permission.ACCESS_FINE_LOCATION,
@@ -65,6 +67,7 @@ public class mapa extends AppCompatActivity {
                 Manifest.permission.WRITE_EXTERNAL_STORAGE
 
         });
+        map.setMultiTouchControls(true);
 
         // geoloc palma
         GeoPoint startPoint = new GeoPoint(39.54827, 2.73418);
@@ -73,6 +76,11 @@ public class mapa extends AppCompatActivity {
         mapController.setZoom(18);
         mapController.setCenter(startPoint);
 
+
+        //add_points_map();
+        add_marker(startPoint);
+
+        map.invalidate();
 
         BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottom_navigation);
 
@@ -102,6 +110,41 @@ public class mapa extends AppCompatActivity {
                 return true;
             }
         });
+    }
+
+
+/*    void add_points_map(){
+
+        //your items
+        ArrayList<OverlayItem> items = new ArrayList<OverlayItem>();
+        items.add(new OverlayItem("Point", "Aqui estoy yo", new GeoPoint(39.549627,2.734484))); // Lat/Lon decimal degrees
+
+//the overlay
+        ItemizedOverlayWithFocus<OverlayItem> mOverlay = new ItemizedOverlayWithFocus<OverlayItem>(items,
+                new ItemizedIconOverlay.OnItemGestureListener<OverlayItem>() {
+                    @Override
+                    public boolean onItemSingleTapUp(final int index, final OverlayItem item) {
+                        //do something
+                        return true;
+                    }
+                    @Override
+                    public boolean onItemLongPress(final int index, final OverlayItem item) {
+                        return false;
+                    }
+                },Context);
+        mOverlay.setFocusItemsOnTap(true);
+
+        map.getOverlays().add(mOverlay);
+    }*/
+
+    void add_marker(GeoPoint startPoint){
+        Marker startMarker = new Marker(map);
+        startMarker.setPosition(startPoint);
+        //startMarker.setAnchor(Marker.ANCHOR_CENTER, Marker.ANCHOR_BOTTOM);
+        startMarker.setIcon(getResources().getDrawable(R.drawable.ic_vuelos));
+        startMarker.setTitle("Start point");
+
+        map.getOverlays().add(startMarker);
     }
 
     @Override

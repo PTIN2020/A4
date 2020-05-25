@@ -25,7 +25,7 @@
                 android:layout_width="180dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="112dp"
                 android:background="@drawable/btn_login"
                 android:stateListAnimator="@null"
                 android:text="Editar perfil"
@@ -107,93 +107,92 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_gravity="right"
+                    android:layout_marginLeft="10dp"
                     android:layout_weight="1.33"
-                    android:orientation="vertical"
-                    android:layout_marginLeft="10dp">
+                    android:orientation="vertical">
 
                     <TextView
                         android:id="@+id/textView1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginBottom="15dp"
                         android:gravity="left"
                         android:text="Nombre  "
                         android:textAlignment="gravity"
                         android:textColor="@color/black"
-                        android:textIsSelectable="false"
-                        android:layout_marginBottom="15dp"/>
+                        android:textIsSelectable="false" />
 
                     <TextView
                         android:id="@+id/textView14"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginBottom="15dp"
                         android:gravity="left"
                         android:text="Apellidos  "
                         android:textAlignment="gravity"
                         android:textColor="@color/black"
-                        android:textIsSelectable="false"
-                        android:layout_marginBottom="15dp"/>
-
+                        android:textIsSelectable="false" />
 
 
                     <TextView
                         android:id="@+id/textView2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginBottom="15dp"
                         android:gravity="left"
                         android:text="Fecha Nacimiento  "
                         android:textAlignment="gravity"
-                        android:textColor="@color/black"
-                        android:layout_marginBottom="15dp"/>
+                        android:textColor="@color/black" />
 
                     <TextView
                         android:id="@+id/textView3"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginBottom="15dp"
                         android:gravity="left"
                         android:text="Género  "
                         android:textAlignment="gravity"
-                        android:textColor="@color/black"
-                        android:layout_marginBottom="15dp"/>
+                        android:textColor="@color/black" />
 
                     <TextView
                         android:id="@+id/textView4"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginBottom="15dp"
                         android:gravity="left"
                         android:text="Teléfono  "
                         android:textAlignment="gravity"
-                        android:textColor="@color/black"
-                        android:layout_marginBottom="15dp"/>
+                        android:textColor="@color/black" />
 
                     <TextView
                         android:id="@+id/textView5"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginBottom="15dp"
                         android:gravity="left"
                         android:text="Email  "
                         android:textAlignment="gravity"
-                        android:textColor="@color/black"
-                        android:layout_marginBottom="15dp"/>
+                        android:textColor="@color/black" />
 
                     <TextView
                         android:id="@+id/textView7"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginBottom="15dp"
                         android:gravity="left"
                         android:text="Vip  "
                         android:textAlignment="gravity"
-                        android:textColor="@color/black"
-                        android:layout_marginBottom="15dp"/>
+                        android:textColor="@color/black" />
 
                     <TextView
                         android:id="@+id/textView8"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginBottom="15dp"
                         android:gravity="left"
                         android:text="Necesidades especiales  "
                         android:textAlignment="gravity"
-                        android:textColor="@color/black"
-                        android:layout_marginBottom="15dp"/>
+                        android:textColor="@color/black" />
 
                 </LinearLayout>
 
@@ -207,72 +206,95 @@
                         android:id="@+id/textView9"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginBottom="15dp"
                         android:text="Nombre"
-                        android:textColor="@color/black"
-                        android:layout_marginBottom="15dp"/>
+                        android:textColor="@color/black" />
 
                     <EditText
                         android:id="@+id/editText13"
                         android:layout_width="match_parent"
                         android:layout_height="19dp"
+                        android:layout_marginBottom="15dp"
                         android:ems="10"
                         android:inputType="textPersonName"
                         android:text="1º Apellido"
-                        android:textSize="14sp"
-                        android:layout_marginBottom="15dp"/>
-
+                        android:textSize="14sp" />
 
 
                     <TextView
                         android:id="@+id/textView10"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginBottom="15dp"
                         android:text="Fecha Nacimiento"
-                        android:textColor="@color/black"
-                        android:layout_marginBottom="15dp"/>
+                        android:textColor="@color/black" />
 
                     <TextView
                         android:id="@+id/textView11"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginBottom="15dp"
                         android:text="Género"
-                        android:textColor="@color/black"
-                        android:layout_marginBottom="15dp"/>
+                        android:textColor="@color/black" />
 
                     <TextView
                         android:id="@+id/textView12"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginBottom="15dp"
                         android:text="Teléfono"
-                        android:textColor="@color/black"
-                        android:layout_marginBottom="15dp"/>
+                        android:textColor="@color/black" />
 
                     <TextView
                         android:id="@+id/textView13"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginBottom="15dp"
                         android:text="Email"
-                        android:textColor="@color/black"
-                        android:layout_marginBottom="15dp"/>
+                        android:textColor="@color/black" />
 
                     <CheckBox
-                        android:text="Si"
                         android:layout_width="match_parent"
                         android:layout_height="21dp"
-                        android:layout_marginBottom="15dp">
+                        android:layout_marginBottom="15dp"
+                        android:text="Si">
 
                     </CheckBox>
 
                     <CheckBox
-                        android:text="Si"
                         android:layout_width="match_parent"
                         android:layout_height="21dp"
-                        android:layout_marginBottom="15dp">
+                        android:layout_marginBottom="15dp"
+                        android:text="Si">
 
                     </CheckBox>
 
                 </LinearLayout>
             </LinearLayout>
+
+            <Button
+                android:id="@+id/btntopic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="MY TOPICS"
+                app:layout_constraintBottom_toTopOf="@+id/editar"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
+
+            <TextView
+                android:id="@+id/tvtopic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="25sp"
+                android:textStyle="italic"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
+                app:layout_constraintVertical_bias="0.0" />
 
             android:background="?android:attr/selectableItemBackground"
 
