@@ -36,6 +36,7 @@ import terminal1.a4.tarjeta_embarque.Tembarque;
 public class Perfil extends AppCompatActivity {
     private TextView mTopicSelected;
     private String[] listTopics;
+    //private ArrayList<String> mCheckedTopic = new ArrayList<String>(); //para el put
     private boolean[] checkedTopic;
     private ArrayList<Integer> mUserTopics = new ArrayList<>();
     private RequestQueue mQueue;
@@ -80,18 +81,23 @@ public class Perfil extends AppCompatActivity {
                 });
 
                 mBuilder.setCancelable(false);
+
                 mBuilder.setPositiveButton(R.string.ok_label, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         String topic = "";
+                        ArrayList<String> mCheckedTopic = new ArrayList<String>();
                         for (int i = 0;  i < mUserTopics.size(); i++){
                             // aqui es donde ser recogen los datos para crear el json.
                             topic = topic + listTopics[mUserTopics.get(i)];
+                            mCheckedTopic.add(listTopics[mUserTopics.get(i)]);
                             if (i != mUserTopics.size()-1){
                                 topic = topic + ", ";
                             }
                         }
+                        //mCheckedTopic = topic.split(",");
                         mTopicSelected.setText(topic);
+                        jsonPut(mCheckedTopic);
                     }
                 });
 
@@ -173,6 +179,35 @@ public class Perfil extends AppCompatActivity {
             }
         });
         mQueue.add(request);
+    }
+
+
+    private void jsonPut(ArrayList<String> s) {
+        String url = "http://192.168.0.29:3000/pasajero/5ecc26094d7807028ee07696";
+        // ejemplo hardcoded
+        JSONObject new_intereses = new JSONObject();
+        try {
+            new_intereses.put("intereses", new JSONArray(s));
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        //mTopicSelected.setText("Response: " + new_intereses);
+
+        JsonObjectRequest jsonRequest = new JsonObjectRequest(Request.Method.PUT, url, new_intereses, new Response.Listener<JSONObject>() {
+            @Override
+            public void onResponse(JSONObject response) {
+                //nada
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                //si entra aqui esta bien ya que en el put no hay json.
+            }
+        });
+
+        mQueue.add(jsonRequest);
     }
 
     private void configureeditarperfil(){
