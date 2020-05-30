@@ -139,7 +139,7 @@ public class nuevoperfil extends AppCompatActivity {
                     if (Otr.isChecked()) {
                         genero = "Otro";
                     }
-                    String url = "http://192.168.1.57:3000/pasajero";
+                    String url = "http://craaxcloud.epsevg.upc.edu:36301/pasajero";
                     //mTextViewResult.setText("Todo Ready!");
                     JSONObject pasajero = new JSONObject();
                     try {

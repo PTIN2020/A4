@@ -91,7 +91,7 @@ public class Login extends AppCompatActivity {
         String password = campopassword[0].getText().toString();
         String user = campouser[0].getText().toString();
 
-        String url = "http://192.168.1.57:3000/login";
+        String url = "http://craaxcloud.epsevg.upc.edu:36301/login";
         //mTextViewResult.setText("Todo Ready!");
         JSONObject pasajero = new JSONObject();
         try {
