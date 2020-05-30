@@ -33,6 +33,7 @@
             android:textStyle="bold" />
 
         <EditText
+            android:id="@+id/correu"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Email"
@@ -42,6 +43,7 @@
             android:textSize="14dp" />
 
         <EditText
+            android:id="@+id/contrasenya"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Contraseña"
