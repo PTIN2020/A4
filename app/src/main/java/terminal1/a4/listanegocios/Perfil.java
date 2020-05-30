@@ -230,8 +230,8 @@ public class Perfil extends AppCompatActivity {
     private void cargarpreferencias(){
         SharedPreferences preferences = getSharedPreferences("credenciales", Context.MODE_PRIVATE);
         String user = preferences.getString("username","");
-        String url = "http://192.168.1.57:3000/pasajero/sergiandres32@hotmail.com";
-        //String url = url1 + "/" + user ;
+        String url1 = "http://192.168.1.57:3000/pasajero/";
+        String url = url1 + user ;
         final String[] iduserp = {"1"};
         final String[] nombrep = {" "};
         final String[] apellidosp = { " " };
