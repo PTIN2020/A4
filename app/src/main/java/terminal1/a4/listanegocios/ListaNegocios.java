@@ -138,23 +138,32 @@ public class ListaNegocios extends AppCompatActivity {
     }
 
     private void jsonParse() {
-        String url = "http://192.168.0.29:3001/pospasajeros";
+        String url = "http://192.168.1.57:3000/pasajero/sergiandres32@hotmail.com";
         mTextViewResult.setText("");
-        JsonArrayRequest request = new JsonArrayRequest(Request.Method.GET, url, null,
-                new Response.Listener<JSONArray>() {
+        final String[] iduserp = {"1"};
+        final String[] nombrep = {" "};
+        final String[] apellidosp = { " " };
+        final String[] naciop = { " " };
+        final String[] generop = { " " };
+        final String[] vipp = { " " };
+        final String[] disablep = { " " };
+        final String[] telefonop = { " " };
+        JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null,
+                new Response.Listener<JSONObject>() {
                     @Override
-                    public void onResponse(JSONArray response) {
+                    public void onResponse(JSONObject response) {
                         //mTextViewResult.setText("Response: " + response.toString());
                         try {
-                            //JSONArray jsonArray = response.getJSONArray("pospasajeros");
-                            //JSONObject id_pasajero = response.getJSONObject("id_pasajero");
-                            for (int i = 0; i < response.length(); i++) {
-                                JSONObject pasajero = response.getJSONObject(i);
-                                String id = pasajero.getString("id_pasajero");
-                                double posx = pasajero.getDouble("posicionx");
-                                double posy = pasajero.getDouble("posiciony");
-                                mTextViewResult.append(id + ", " + String.valueOf(posx) + ", " + String.valueOf(posy) + "\n\n");
-                            }
+                                iduserp[0] = response.getString("id_user");
+                                nombrep[0] = response.getString("nombre");
+                                apellidosp[0] = response.getString("apellidos");
+                                naciop[0] = response.getString("nacio");
+                                generop[0] = response.getString("genero");
+                                vipp[0] = response.getString("vip");
+                                disablep[0] = response.getString("disable");
+                                telefonop[0] = response.getString("telefono");
+                                mTextViewResult.append( vipp[0] + "\n\n" +disablep[0] +"\n\n"+ apellidosp[0] );
+
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
