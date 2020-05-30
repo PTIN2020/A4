@@ -138,8 +138,10 @@ public class ListaNegocios extends AppCompatActivity {
     }
 
     private void jsonParse() {
-        String url = "http://192.168.1.57:3000/pasajero/sergiandres32@hotmail.com";
         mTextViewResult.setText("");
+        String user = "Prueba@hotmail.com";
+        String url1 = "http://192.168.1.57:3000/pasajero/";
+        String url = url1 + user ;
         final String[] iduserp = {"1"};
         final String[] nombrep = {" "};
         final String[] apellidosp = { " " };

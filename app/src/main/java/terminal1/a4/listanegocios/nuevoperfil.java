@@ -26,6 +26,7 @@ import com.android.volley.toolbox.Volley;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import terminal1.a4.loginui.Login;
 import terminal1.a4.loginui.R;
 import terminal1.a4.loginui.servicios;
 import terminal1.a4.tarjeta_embarque.Tembarque;
@@ -164,7 +165,7 @@ public class nuevoperfil extends AppCompatActivity {
                         @Override
                         public void onResponse(JSONObject response) {
                             if (response.toString().contains("ok")) {
-                                startActivity(new Intent(nuevoperfil.this, Tembarque.class));
+                                startActivity(new Intent(nuevoperfil.this, Login.class));
                                 finish();
                             } else {
                                 popup.dismiss();
