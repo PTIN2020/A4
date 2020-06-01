@@ -16,11 +16,16 @@
     <string name="Cancel_label">Cancel</string>
     <string name="Clear_all_label">Clear all</string>
 
-    <string-array name="preferences">
-        <item>Restaurantes</item>
-        <item>Tiendas</item>
-        <item>Salas Vip</item>
-        <item>Puntos información</item>
-    </string-array>
+   <!--<string-array name="preferences">
+       <item>Deportes de aventura</item>
+       <item>Artículos de broma</item>
+       <item>Ropa de diseño</item>
+       <item>Hiervas venenosas</item>
+       <item>Comida de diseño</item>
+       <item>Joyas y diamantes</item>
+       <item>Ropa barata</item>
+       <item>Deportes de invierno</item>
+       <item>Comida Rápida</item>
+   </string-array>-->
 
 </resources>

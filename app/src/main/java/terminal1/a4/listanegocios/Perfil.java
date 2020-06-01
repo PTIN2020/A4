@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -12,6 +13,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -39,15 +41,16 @@ import terminal1.a4.loginui.servicios;
 import terminal1.a4.tarjeta_embarque.Tembarque;
 
 public class Perfil extends AppCompatActivity {
-    private TextView mTopicSelected;
     private String[] listTopics;
     //private ArrayList<String> mCheckedTopic = new ArrayList<String>(); //para el put
     private boolean[] checkedTopic;
+    private String test ="";
+    private ArrayList<String> listIntereses;
     private ArrayList<Integer> mUserTopics = new ArrayList<>();
     private RequestQueue mQueue;
-    private String[] listIntereses;
     private EditText usuario, nombreperfil, apellidosperfil, docuperfil, nacimientoperfil, generoperfil, telefonoperfil, vipperfil, disabledperfil;
 
+    @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -57,17 +60,24 @@ public class Perfil extends AppCompatActivity {
 
         //API
         mQueue = Volley.newRequestQueue(this);
+        //Dentro del Get llamamos al menu para tratar las preferencias
         jsonGet();
-
+        jsonGetid();
         //Cargar datos perfil
         cargarpreferencias();
+        //Menu inferior
+        Menuinferior();
 
+    }
 
+    private void SeleccionPreferencias(ArrayList<String> listIntereses){
         // Dialog
-        Button mTopic = (Button) findViewById(R.id.btntopic);
-        mTopicSelected = (TextView) findViewById(R.id.tvtopic);
+        TextView mTopicSelected = findViewById(R.id.tvtopic); // print testing
+        //listTopics = getResources().getStringArray(R.array.preferences);
+        Button mTopic = findViewById(R.id.btntopic);
 
-        listTopics = getResources().getStringArray(R.array.preferences);
+        listTopics = new String[listIntereses.size()];
+        listTopics = listIntereses.toArray(listTopics);
         checkedTopic = new boolean[listTopics.length];
 
         mTopic.setOnClickListener(new View.OnClickListener() {
@@ -104,7 +114,7 @@ public class Perfil extends AppCompatActivity {
                             }
                         }
                         //mCheckedTopic = topic.split(",");
-                        mTopicSelected.setText(topic);
+                        //mTopicSelected.setText(topic);
                         jsonPut(mCheckedTopic);
                     }
                 });
@@ -122,59 +132,65 @@ public class Perfil extends AppCompatActivity {
                         for (int i=0; i < checkedTopic.length; i++){
                             checkedTopic[i] = false;
                             mUserTopics.clear();
-                            mTopicSelected.setText("");
+                            //mTopicSelected.setText("");
                         }
+                        jsonPut(null);
                     }
                 });
 
                 AlertDialog mDialog = mBuilder.create();
                 mDialog.show();
             }
-        });
 
-
-        BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottom_navigation);
-
-        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                switch (item.getItemId()) {
-                    case R.id.ic_vuelos:
-                        Intent intent4 = new Intent(Perfil.this, Tembarque.class);
-                        startActivity(intent4);
-                        break;
-                    case R.id.ic_mapa:
-                        Intent intent1 = new Intent(Perfil.this, mapa.class);
-                        startActivity(intent1);
-                        break;
-                    case R.id.ic_servicios:
-                        Intent intent2 = new Intent(Perfil.this, servicios.class);
-                        startActivity(intent2);
-                        break;
-                    case R.id.ic_tiendas:
-                        Intent intent3 = new Intent(Perfil.this, ListaNegocios.class);
-                        startActivity(intent3);
-                        break;
-                    case R.id.ic_perfil:
-                        break;
-                }
-                return true;
-            }
         });
     }
 
     private void jsonGet() {
-        String url = "http://192.168.0.29:3000/intereses";
-        listIntereses = null;
+        String url = "http://craaxcloud.epsevg.upc.edu:36301/intereses";
+        listIntereses = new ArrayList<>();
         JsonArrayRequest request = new JsonArrayRequest(Request.Method.GET, url, null,
                 new Response.Listener<JSONArray>() {
                     @Override
                     public void onResponse(JSONArray response) {
                         try {
-                            listIntereses = response.getJSONObject(0).getString("interes").split(",");
-                            //for (int i = 0; i < listIntereses.length; i++) {
-                            //    mTopicSelected.append("pos "+ i + " " + listIntereses[i] + " ");
-                            //}
+                            String s ="";
+                            for (int i = 0; i < response.length(); i++) {
+                                listIntereses.add(response.getJSONObject(i).getString("interes"));
+                                //Menu preferencias
+                                SeleccionPreferencias(listIntereses);
+                            }
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                error.printStackTrace();
+                //mTextViewResult.setText(error.getMessage());
+            }
+        });
+        mQueue.add(request);
+    }
+
+    private void jsonGetid(){
+        SharedPreferences preferences = getSharedPreferences("credenciales", Context.MODE_PRIVATE);
+        String user = preferences.getString("username","");
+        String url = "http://craaxcloud.epsevg.upc.edu:36301/pasajero/";
+        url += user;
+        System.out.println(url);
+        JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null,
+                new Response.Listener<JSONObject>() {
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        String id;
+                        try {
+                            id = response.getString("_id");
+                            SharedPreferences preferences = getSharedPreferences("credenciales", Context.MODE_PRIVATE);
+                            SharedPreferences.Editor editor = preferences.edit();
+                            editor.putString("_id", id);
+                            editor.apply();
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
@@ -191,8 +207,9 @@ public class Perfil extends AppCompatActivity {
 
 
     private void jsonPut(ArrayList<String> s) {
-        String url = "http://192.168.0.29:3000/pasajero/5ecc26094d7807028ee07696";
-        // ejemplo hardcoded
+        SharedPreferences preferences = getSharedPreferences("credenciales", Context.MODE_PRIVATE);
+        String id = preferences.getString("_id","");
+        String url = "http://craaxcloud.epsevg.upc.edu:36301/pasajero/" + id;
         JSONObject new_intereses = new JSONObject();
         try {
             new_intereses.put("intereses", new JSONArray(s));
@@ -219,7 +236,7 @@ public class Perfil extends AppCompatActivity {
     }
 
     private void configureeditarperfil(){
-        Button edit = (Button) findViewById(R.id.editar);
+        Button edit = findViewById(R.id.editar);
         edit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -254,15 +271,15 @@ public class Perfil extends AppCompatActivity {
                             vipp[0] = response.getString("vip");
                             disablep[0] = response.getString("disable");
                             telefonop[0] = response.getString("telefono");
-                            docuperfil = (EditText) findViewById(R.id.textiduser);
+                            docuperfil = findViewById(R.id.textiduser);
                             docuperfil.setText(iduserp[0]);
-                            nombreperfil = (EditText) findViewById(R.id.textnombre);
+                            nombreperfil = findViewById(R.id.textnombre);
                             nombreperfil.setText(nombrep[0]);
-                            apellidosperfil = (EditText) findViewById(R.id.textapellidos);
+                            apellidosperfil = findViewById(R.id.textapellidos);
                             apellidosperfil.setText(apellidosp[0]);
-                            nacimientoperfil = (EditText) findViewById(R.id.textnacio);
+                            nacimientoperfil = findViewById(R.id.textnacio);
                             nacimientoperfil.setText(naciop[0]);
-                            telefonoperfil = (EditText) findViewById(R.id.texttelefono);
+                            telefonoperfil = findViewById(R.id.texttelefono);
                             telefonoperfil.setText(telefonop[0]);
                             if(vipp[0].equals("true")){
                                 CheckBox V = findViewById(R.id.textvip);
@@ -296,7 +313,38 @@ public class Perfil extends AppCompatActivity {
             }
         });
         mQueue.add(request);
-        usuario = (EditText) findViewById(R.id.Emaild);
+        usuario = findViewById(R.id.Emaild);
         usuario.setText(user);
+    }
+
+    private void Menuinferior(){
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
+
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()) {
+                    case R.id.ic_vuelos:
+                        Intent intent4 = new Intent(Perfil.this, Tembarque.class);
+                        startActivity(intent4);
+                        break;
+                    case R.id.ic_mapa:
+                        Intent intent1 = new Intent(Perfil.this, mapa.class);
+                        startActivity(intent1);
+                        break;
+                    case R.id.ic_servicios:
+                        Intent intent2 = new Intent(Perfil.this, servicios.class);
+                        startActivity(intent2);
+                        break;
+                    case R.id.ic_tiendas:
+                        Intent intent3 = new Intent(Perfil.this, ListaNegocios.class);
+                        startActivity(intent3);
+                        break;
+                    case R.id.ic_perfil:
+                        break;
+                }
+                return true;
+            }
+        });
     }
 }
