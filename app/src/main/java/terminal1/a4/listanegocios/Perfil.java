@@ -11,13 +11,17 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.os.CountDownTimer;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.RadioButton;
+import android.widget.Switch;
 import android.widget.TextView;
 
 import com.android.volley.Request;
@@ -58,6 +62,21 @@ public class Perfil extends AppCompatActivity {
         setContentView(R.layout.activity_perfil);
         configureeditarperfil();
 
+        //Controldelfog
+        @SuppressLint("WrongViewCast") Switch fogControl = (Switch) findViewById(R.id.switch1);
+        if (fogControl != null){
+            fogControl.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+                @Override
+                public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                    if (isChecked){
+                        activarfog();
+                    } else {
+                        desactivarfog();
+                    }
+                }
+            });
+        }
+
         //API
         mQueue = Volley.newRequestQueue(this);
         //Dentro del Get llamamos al menu para tratar las preferencias
@@ -69,6 +88,7 @@ public class Perfil extends AppCompatActivity {
         Menuinferior();
 
     }
+
 
     private void SeleccionPreferencias(ArrayList<String> listIntereses){
         // Dialog
@@ -143,6 +163,63 @@ public class Perfil extends AppCompatActivity {
             }
 
         });
+    }
+
+    private void activarfog() {
+
+        String url = "http://craaxcloud.epsevg.upc.edu:36302/nodos/random/position/";
+        SharedPreferences preferences = getSharedPreferences("credenciales", Context.MODE_PRIVATE);
+        String user = preferences.getString("username","");
+        boolean fogState = true;
+        SharedPreferences.Editor editor=preferences.edit();
+        editor.putBoolean("fog",fogState);
+        url+=user;
+        Log.d("Entramos en activarfog",url);
+        JsonArrayRequest request = new JsonArrayRequest(Request.Method.GET, url, null,
+                new Response.Listener<JSONArray>() {
+                    @Override
+                    public void onResponse(JSONArray response) {
+                        editor.commit();
+                    }
+
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        error.printStackTrace();
+                        //mTextViewResult.setText(error.getMessage());
+                    }
+                });
+            mQueue.add(request);
+    }
+
+    private void desactivarfog(){
+        String url = "http://craaxcloud.epsevg.upc.edu:36302/pospasajeros/";
+        SharedPreferences preferences = getSharedPreferences("credenciales", Context.MODE_PRIVATE);
+        String user = preferences.getString("username","");
+        boolean fogState = false;
+        SharedPreferences.Editor editor=preferences.edit();
+        editor.putBoolean("fog",fogState);
+
+        url+=user;
+        JsonArrayRequest request = new JsonArrayRequest(Request.Method.DELETE, url, null,
+                new Response.Listener<JSONArray>() {
+                    @Override
+                    public void onResponse(JSONArray response) {
+                        editor.commit();
+                    }
+
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        error.printStackTrace();
+                        //mTextViewResult.setText(error.getMessage());
+                    }
+                });
+        mQueue.add(request);
+
+
     }
 
     private void jsonGet() {
