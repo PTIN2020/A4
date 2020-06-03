@@ -20,6 +20,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.RadioButton;
 import android.widget.Switch;
 import android.widget.TextView;
@@ -39,6 +40,7 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
+import terminal1.a4.loginui.Login;
 import terminal1.a4.loginui.R;
 import terminal1.a4.loginui.mapa;
 import terminal1.a4.loginui.servicios;
@@ -84,6 +86,8 @@ public class Perfil extends AppCompatActivity {
         jsonGetid();
         //Cargar datos perfil
         cargarpreferencias();
+        //Botón log out
+        controllogout();
         //Menu inferior
         Menuinferior();
 
@@ -163,6 +167,17 @@ public class Perfil extends AppCompatActivity {
             }
 
         });
+    }
+
+    private void logout() {
+        SharedPreferences preferences = getSharedPreferences("credenciales", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor=preferences.edit();
+        String user = "";
+        editor.putString("username", user);
+        editor.putBoolean("fog", false);
+        editor.apply();
+        startActivity(new Intent(Perfil.this, Login.class));
+        finish();
     }
 
     private void activarfog() {
@@ -321,6 +336,24 @@ public class Perfil extends AppCompatActivity {
             }
         });
     }
+
+    private void controllogout(){
+        ImageButton loff = findViewById(R.id.logoff);
+        loff.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                SharedPreferences preferences = getSharedPreferences("credenciales", Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor=preferences.edit();
+                String user = "";
+                editor.putString("username", user);
+                editor.putBoolean("fog", false);
+                editor.apply();
+                startActivity(new Intent(Perfil.this, Login.class));
+                finish();
+            }
+        });
+    }
+
     private void cargarpreferencias(){
         SharedPreferences preferences = getSharedPreferences("credenciales", Context.MODE_PRIVATE);
         String user = preferences.getString("username","");
