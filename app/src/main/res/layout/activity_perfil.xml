@@ -25,7 +25,7 @@
                 android:layout_width="180dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginTop="552dp"
+                android:layout_marginTop="536dp"
                 android:background="@drawable/btn_login"
                 android:stateListAnimator="@null"
                 android:text="Editar perfil"
@@ -35,7 +35,7 @@
                 android:textStyle="bold"
                 app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.527"
+                app:layout_constraintHorizontal_bias="0.549"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -46,10 +46,10 @@
                 android:text="FOG "
                 app:layout_constraintBottom_toTopOf="@+id/bottom_navigation"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.168"
+                app:layout_constraintHorizontal_bias="0.093"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.949" />
+                app:layout_constraintVertical_bias="0.937" />
 
             <TextView
                 android:id="@+id/textView23"
@@ -433,10 +433,10 @@
                 android:text="MY TOPICS"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.922"
+                app:layout_constraintHorizontal_bias="0.977"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.883" />
+                app:layout_constraintVertical_bias="0.877" />
 
             <TextView
                 android:id="@+id/tvtopic"
@@ -450,6 +450,22 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.78" />
+
+            <ImageButton
+                android:id="@+id/logoff"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                android:layout_marginTop="@dimen/activity_horizontal_margin"
+                android:layout_marginEnd="347dp"
+                android:layout_marginBottom="@dimen/activity_vertical_margin"
+                android:visibility="visible"
+                app:layout_constraintBottom_toTopOf="@+id/switch1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
+                app:srcCompat="@drawable/exit"
+                tools:visibility="visible" />
 
             android:background="?android:attr/selectableItemBackground"
 
