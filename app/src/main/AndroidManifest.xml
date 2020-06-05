@@ -19,16 +19,16 @@
         tools:replace="android:allowBackup">
         <activity android:name=".reserva_vuelos"></activity>
         <activity android:name=".mis_vuelos"></activity>
-        <activity android:name=".StartActivity" />
+        <activity android:name=".Login" />
         <activity android:name=".NegocioFull" />
         <activity android:name="terminal1.a4.listanegocios.Perfil" />
         <activity android:name="terminal1.a4.listanegocios.nuevoperfil" />
         <activity android:name="terminal1.a4.listanegocios.modificarperfil"></activity>
         <activity android:name="terminal1.a4.listanegocios.anadirvuelo"></activity>
         <activity
-            android:name=".Login"
-            android:label="Myapp"
-            android:screenOrientation="fullSensor">
+            android:name=".StartActivity"
+            android:label="VIA"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
