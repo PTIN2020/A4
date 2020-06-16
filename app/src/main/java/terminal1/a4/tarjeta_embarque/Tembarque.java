@@ -16,6 +16,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.TextView;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -45,16 +46,38 @@ import terminal1.a4.loginui.servicios;
 
 public class Tembarque extends AppCompatActivity {
     private RequestQueue mQueue;
+    private TextView mTextViewResult2;
+    private TextView mTextViewResult3;
+    private TextView mTextViewResult4;
+    private TextView mTextViewResult5;
+    private TextView mTextViewResult6;
+    private TextView mTextViewResult7;
+    private TextView mTextViewResult8;
+    private TextView mTextViewResult9;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.tarjeta_embarque);
+
+
+        mTextViewResult2 = findViewById(R.id.hora);
+        mTextViewResult3 = findViewById(R.id.numero_emb);
+        mTextViewResult4 = findViewById(R.id.numero_as);
+        mTextViewResult5 = findViewById(R.id.nombre_com);
+        mTextViewResult6 = findViewById(R.id.n_maletas);
+        mTextViewResult7 = findViewById(R.id.num_dni);
+        mTextViewResult8 = findViewById(R.id.si_vip);
+        mTextViewResult9 = findViewById(R.id.si_minusvalia);
+
+
         createNotificationChannel();
         botndevuelos();
         SharedPreferences preferences=getSharedPreferences("credenciales", Context.MODE_PRIVATE);
         botontransporte();
         mQueue = Volley.newRequestQueue(this);
+        jsonParse();
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         String user = preferences.getString("username","");
         String url = "http://craaxcloud.epsevg.upc.edu:36302/pospasajeros/" + user;
@@ -152,8 +175,8 @@ public class Tembarque extends AppCompatActivity {
                         break;
                     case R.id.ic_servicios:
                         Intent intent2 = new Intent(Tembarque.this, servicios.class);
-                        CheckBox checkBox = findViewById(R.id.checkBoxminus);
-                        intent2.putExtra("grade1", checkBox.isChecked());
+                        //CheckBox checkBox = findViewById(R.id.checkBoxminus);
+                        //intent2.putExtra("grade1", checkBox.isChecked());
                         startActivity(intent2);
                         break;
                     case R.id.ic_tiendas:
@@ -283,6 +306,65 @@ public class Tembarque extends AppCompatActivity {
             NotificationManager notificationManager = getSystemService(NotificationManager.class);
             notificationManager.createNotificationChannel(channel);
         }
+    }
+
+    private void jsonParse() {
+
+        final String[] hora={" "};
+        final String[] numero={" "};
+        final String[] numero2={" "};
+        final String[] nombre2={" "};
+        final String[] nummaletas={" "};
+        final  String[] dnipass={" "};
+        final String[] vip={" "};
+        final String[] minusvalia={" "};
+
+
+        SharedPreferences preferences = getSharedPreferences("credenciales", Context.MODE_PRIVATE);
+        String username = preferences.getString("username","");
+        //String username = "catwoman@gothamcitymail.com";
+        String url = "http://craaxcloud.epsevg.upc.edu:36301/Billetes/user/"+username;
+        System.out.println(url);
+        //mTextViewResult.setText("");
+        // mTextViewResult2.append(hora[0] + "\n");
+        JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null,
+                new Response.Listener<JSONObject>() {
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        //mTextViewResult.setText("Response: " + response.toString());
+
+                        // JSONObject  = new JSONObject();
+                        // System.out.println();
+                        try {
+                            hora[0] = response.getString("hora");
+                            numero[0] = response.getString("puerta");
+                            numero2[0] = response.getString("asiento");
+                            nombre2[0] = response.getString("aerolinea");
+                            nummaletas[0] = response.getString("maletas_paid");
+                            dnipass[0] = response.getString("id_user");
+                            vip[0] = response.getString("vip");
+                            minusvalia[0] = response.getString("disable");
+
+                            mTextViewResult2.append(hora[0] );
+                            mTextViewResult3.append(numero[0] );
+                            mTextViewResult4.append(numero2[0] );
+                            mTextViewResult5.append(nombre2[0] );
+                            mTextViewResult6.append(nummaletas[0] );
+                            mTextViewResult7.append(dnipass[0] );
+                            mTextViewResult8.append(vip[0] );
+                            mTextViewResult9.append(minusvalia[0] );
+                        }  catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                error.printStackTrace();
+                //  mTextViewResult3.setText(error.getMessage());
+            }
+        });
+        mQueue.add(request);
     }
 
 }
