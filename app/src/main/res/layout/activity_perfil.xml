@@ -278,7 +278,7 @@
                         android:ems="10"
                         android:background="@null"
 
-                        android:hint="DD/MM/YYYY"
+                        android:hint="YYYY-MM-DD"
                         android:inputType="date"
                         android:textColor="#3C3C3C"
                         android:textColorHint="#484848"
