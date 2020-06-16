@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/A4.iml" filepath="$PROJECT_DIR$/A4.iml" />
+      <module fileurl="file://$PROJECT_DIR$/A4-LoginUi.iml" filepath="$PROJECT_DIR$/A4-LoginUi.iml" group="LoginUi" />
       <module fileurl="file://$PROJECT_DIR$/A412-LoginUi.iml" filepath="$PROJECT_DIR$/A412-LoginUi.iml" group="LoginUi" />
       <module fileurl="file://$PROJECT_DIR$/A4Daniversion5-LoginUi.iml" filepath="$PROJECT_DIR$/A4Daniversion5-LoginUi.iml" group="LoginUi" />
       <module fileurl="file://$PROJECT_DIR$/A4Forzado-LoginUi.iml" filepath="$PROJECT_DIR$/A4Forzado-LoginUi.iml" group="LoginUi" />
