@@ -179,6 +179,7 @@ public class Perfil extends AppCompatActivity {
         String user = "";
         editor.putString("username", user);
         editor.putBoolean("fog", false);
+        editor.clear().commit();
         editor.apply();
         startActivity(new Intent(Perfil.this, Login.class));
         finish();
