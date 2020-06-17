@@ -86,7 +86,7 @@ public class StartActivity extends AppCompatActivity {
                 if(!tipon.equals("") && !nombrenegocion.equals("")) {
                     createNotificationChannel();
                     NotificationCompat.Builder builder = new NotificationCompat.Builder(this, "gustos")
-                            .setSmallIcon(R.drawable.logo_login)
+                            .setSmallIcon(R.mipmap.ic_launcher)
                             .setWhen(System.currentTimeMillis())
                             .setContentTitle("Segun sus intereses le recomendamos:")
                             .setContentText("Ir a " + tipon + " " + nombrenegocion)
