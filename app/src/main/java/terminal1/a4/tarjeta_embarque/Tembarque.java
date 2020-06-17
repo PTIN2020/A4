@@ -68,9 +68,8 @@ public class Tembarque extends AppCompatActivity {
         mTextViewResult5 = findViewById(R.id.nombre_com);
         mTextViewResult6 = findViewById(R.id.n_maletas);
         mTextViewResult7 = findViewById(R.id.num_dni);
-        mTextViewResult8 = findViewById(R.id.si_vip);
-        mTextViewResult9 = findViewById(R.id.si_minusvalia);
-
+        CheckBox V = findViewById(R.id.textvip1);
+        CheckBox D = findViewById(R.id.textnecesidades1);
 
         createNotificationChannel();
         botndevuelos();
@@ -351,8 +350,14 @@ public class Tembarque extends AppCompatActivity {
                             mTextViewResult5.append(nombre2[0] );
                             mTextViewResult6.append(nummaletas[0] );
                             mTextViewResult7.append(dnipass[0] );
-                            mTextViewResult8.append(vip[0] );
-                            mTextViewResult9.append(minusvalia[0] );
+                            if(vip[0].equals("true")){
+                                CheckBox V = findViewById(R.id.textvip1);
+                                V.setChecked(true);
+                            }
+                            if(minusvalia[0].equals("true")){
+                                CheckBox D = findViewById(R.id.textnecesidades1);
+                                D.setChecked(true);
+                            }
                         }  catch (JSONException e) {
                             e.printStackTrace();
                         }

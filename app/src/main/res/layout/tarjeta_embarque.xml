@@ -371,6 +371,19 @@
                 android:background="@color/blue">
 
 
+                <CheckBox
+                    android:id="@+id/textvip1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="126dp"
+                    android:layout_marginTop="51dp"
+                    android:layout_marginEnd="159dp"
+                    android:layout_marginBottom="17dp"
+                    android:textColor="#FFFFFF" />
 
                 <TextView
                     android:id="@+id/tr3"
@@ -417,20 +430,6 @@
                     android:textColor="@color/white" />
 
                 <TextView
-                    android:id="@+id/si_vip"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentStart="true"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentEnd="true"
-                    android:layout_alignParentBottom="true"
-                    android:layout_marginStart="121dp"
-                    android:layout_marginTop="55dp"
-                    android:layout_marginEnd="160dp"
-                    android:layout_marginBottom="20dp"
-                    android:textColor="@color/white" />
-
-                <TextView
                     android:id="@+id/tr3_4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -445,19 +444,19 @@
                     android:textColor="@color/white"
                     android:buttonTint="@color/white"/>
 
-                <TextView
-                    android:id="@+id/si_minusvalia"
+                <CheckBox
+                    android:id="@+id/textnecesidades1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentStart="true"
                     android:layout_alignParentTop="true"
                     android:layout_alignParentEnd="true"
                     android:layout_alignParentBottom="true"
-                    android:layout_marginStart="260dp"
-                    android:layout_marginTop="55dp"
-                    android:layout_marginEnd="14dp"
-                    android:layout_marginBottom="20dp"
-                    android:textColor="@color/white"/>
+                    android:layout_marginStart="272dp"
+                    android:layout_marginTop="51dp"
+                    android:layout_marginEnd="13dp"
+                    android:layout_marginBottom="18dp"
+                    android:textColor="#FFFFFF" />
 
 
             </RelativeLayout>
