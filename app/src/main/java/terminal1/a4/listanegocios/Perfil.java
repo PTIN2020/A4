@@ -195,6 +195,7 @@ public class Perfil extends AppCompatActivity {
         url+=user;
         Log.d("Entramos en activarfog",url);
         editor.commit();
+
         JsonArrayRequest request = new JsonArrayRequest(Request.Method.GET, url, null,
                 new Response.Listener<JSONArray>() {
                     @Override
