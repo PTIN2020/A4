@@ -3,8 +3,12 @@ package terminal1.a4.listanegocios;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
 
 import android.annotation.SuppressLint;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -39,9 +43,11 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 import terminal1.a4.loginui.Login;
 import terminal1.a4.loginui.R;
+import terminal1.a4.loginui.StartActivity;
 import terminal1.a4.loginui.mapa;
 import terminal1.a4.loginui.servicios;
 import terminal1.a4.tarjeta_embarque.Tembarque;
@@ -63,21 +69,25 @@ public class Perfil extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_perfil);
         configureeditarperfil();
-
+        SharedPreferences preferences = getSharedPreferences("credenciales", Context.MODE_PRIVATE);
+        boolean fogBool = preferences.getBoolean("fog",false);
+        String fogString = new String();
+        if (fogBool) fogString = "true";
+        else fogString = "false";
         //Controldelfog
         @SuppressLint("WrongViewCast") Switch fogControl = (Switch) findViewById(R.id.switch1);
-        if (fogControl != null){
-            fogControl.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-                @Override
-                public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                    if (isChecked){
-                        activarfog();
-                    } else {
-                        desactivarfog();
-                    }
+        fogControl.setChecked(fogBool);
+        System.out.println(fogString);
+        fogControl.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    activarfog();
+                } else {
+                    desactivarfog();
                 }
-            });
-        }
+            }
+        });
 
         //API
         mQueue = Volley.newRequestQueue(this);
@@ -175,6 +185,7 @@ public class Perfil extends AppCompatActivity {
         String user = "";
         editor.putString("username", user);
         editor.putBoolean("fog", false);
+        editor.clear().commit();
         editor.apply();
         startActivity(new Intent(Perfil.this, Login.class));
         finish();
@@ -190,11 +201,13 @@ public class Perfil extends AppCompatActivity {
         editor.putBoolean("fog",fogState);
         url+=user;
         Log.d("Entramos en activarfog",url);
+        editor.commit();
+
         JsonArrayRequest request = new JsonArrayRequest(Request.Method.GET, url, null,
                 new Response.Listener<JSONArray>() {
                     @Override
                     public void onResponse(JSONArray response) {
-                        editor.commit();
+
                     }
 
                 },
@@ -205,7 +218,79 @@ public class Perfil extends AppCompatActivity {
                         //mTextViewResult.setText(error.getMessage());
                     }
                 });
-            mQueue.add(request);
+        mQueue.add(request);
+        ////////Generamos una notificacion
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+            CharSequence name = "gustotiendas";
+            String description = "Avisa tiendas y restaurantes de interes";
+            int importance = NotificationManager.IMPORTANCE_DEFAULT;
+            NotificationChannel channel = new NotificationChannel("gustos", name, importance);
+            channel.setDescription(description);
+            NotificationManager notificationManager = getSystemService(NotificationManager.class);
+            notificationManager.createNotificationChannel(channel);
+        }
+        String token = preferences.getString("username","");
+        ////////////////////////////////////////////////
+        if(!token.equals("")) {
+            String urlpreferencias = "http://craaxcloud.epsevg.upc.edu:36301/negocios/porinteres/" + token;
+            final String[] tipo = {" "};
+            final String[] nombrenegocio = {" "};
+            JsonArrayRequest request1 = new JsonArrayRequest(Request.Method.GET, urlpreferencias, null,
+                    new Response.Listener<JSONArray>() {
+                        @Override
+                        public void onResponse(JSONArray response) {
+                            //mTextViewResult.setText("Response: " + response.toString());
+                            try {
+                                final int min = 0;
+                                int max = response.length();
+                                if(max<=0){
+                                    max=1;
+                                }
+                                final int random = new Random().nextInt((max - min) ) + min;
+                                SharedPreferences.Editor editor = preferences.edit();
+                                editor.commit();
+                                JSONObject jsonObject = response.getJSONObject(random);
+                                tipo[0] = jsonObject.getString("tipo");
+                                nombrenegocio[0] = jsonObject.getString("nombre");
+                                System.out.println("nombrenegocio:");
+                                System.out.println(tipo[0]);
+                                editor.putString("tipo", tipo[0]);
+                                editor.putString("nombrenegocio", nombrenegocio[0]);
+                                editor.commit();
+
+                            } catch (JSONException e) {
+
+                                e.printStackTrace();
+                            }
+                        }
+                    }, new Response.ErrorListener() {
+                @Override
+                public void onErrorResponse(VolleyError error) {
+                    error.printStackTrace();
+                }
+            });
+            mQueue.add(request1);
+            ///////////////////////////////////////////////
+            String tipon = preferences.getString("tipo", "");
+            String nombrenegocion = preferences.getString("nombrenegocio", "");
+            editor.remove("tipo");
+            editor.remove("nombrenegocio");
+            if(!tipon.equals("") && !nombrenegocion.equals("")) {
+                NotificationCompat.Builder builder = new NotificationCompat.Builder(this, "gustos")
+                        .setSmallIcon(R.mipmap.ic_launcher)
+                        .setWhen(System.currentTimeMillis())
+                        .setContentTitle("Segun sus intereses le recomendamos:")
+                        .setContentText("Ir a " + tipon + " " + nombrenegocion)
+                        .setPriority(NotificationCompat.PRIORITY_DEFAULT);
+                Intent intent = new Intent(this, mapa.class);
+                PendingIntent pendingintent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+                builder.setContentIntent(pendingintent);
+                NotificationManager nm = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+                nm.notify(201, builder.build());
+            }
+        }
+
+        //////
     }
 
     private void desactivarfog(){
@@ -215,13 +300,13 @@ public class Perfil extends AppCompatActivity {
         boolean fogState = false;
         SharedPreferences.Editor editor=preferences.edit();
         editor.putBoolean("fog",fogState);
-
+        editor.commit();
         url+=user;
         JsonArrayRequest request = new JsonArrayRequest(Request.Method.DELETE, url, null,
                 new Response.Listener<JSONArray>() {
                     @Override
                     public void onResponse(JSONArray response) {
-                        editor.commit();
+
                     }
 
                 },

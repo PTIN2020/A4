@@ -16,15 +16,18 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.TextView;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -45,16 +48,37 @@ import terminal1.a4.loginui.servicios;
 
 public class Tembarque extends AppCompatActivity {
     private RequestQueue mQueue;
+    private TextView mTextViewResult2;
+    private TextView mTextViewResult3;
+    private TextView mTextViewResult4;
+    private TextView mTextViewResult5;
+    private TextView mTextViewResult6;
+    private TextView mTextViewResult7;
+    private TextView mTextViewResult8;
+    private TextView mTextViewResult9;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.tarjeta_embarque);
+
+
+        mTextViewResult2 = findViewById(R.id.hora);
+        mTextViewResult3 = findViewById(R.id.numero_emb);
+        mTextViewResult4 = findViewById(R.id.numero_as);
+        mTextViewResult5 = findViewById(R.id.nombre_com);
+        mTextViewResult6 = findViewById(R.id.n_maletas);
+        mTextViewResult7 = findViewById(R.id.num_dni);
+        CheckBox V = findViewById(R.id.textvip1);
+        CheckBox D = findViewById(R.id.textnecesidades1);
+
         createNotificationChannel();
         botndevuelos();
         SharedPreferences preferences=getSharedPreferences("credenciales", Context.MODE_PRIVATE);
         botontransporte();
         mQueue = Volley.newRequestQueue(this);
+        jsonParse();
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         String user = preferences.getString("username","");
         String url = "http://craaxcloud.epsevg.upc.edu:36302/pospasajeros/" + user;
@@ -95,10 +119,12 @@ public class Tembarque extends AppCompatActivity {
                             } catch (ParseException e) {
                                 e.printStackTrace();
                             }
+                            System.out.println("tiempo --->");
                             System.out.println(dateformatted);
                             System.out.println(dateformatted2);
                             System.out.println(dateformatted3);
                             System.out.println(milis.getTime());
+                            System.out.println("---> tiempo");
                             if(milis.getTime() <= 1800000){
                                 Intent intent = new Intent(Tembarque.this, AlertReceiver.class);
                                 PendingIntent pendingIntent = PendingIntent.getBroadcast(Tembarque.this,1, intent ,0);
@@ -152,8 +178,8 @@ public class Tembarque extends AppCompatActivity {
                         break;
                     case R.id.ic_servicios:
                         Intent intent2 = new Intent(Tembarque.this, servicios.class);
-                        CheckBox checkBox = findViewById(R.id.checkBoxminus);
-                        intent2.putExtra("grade1", checkBox.isChecked());
+                        //CheckBox checkBox = findViewById(R.id.checkBoxminus);
+                        //intent2.putExtra("grade1", checkBox.isChecked());
                         startActivity(intent2);
                         break;
                     case R.id.ic_tiendas:
@@ -283,6 +309,75 @@ public class Tembarque extends AppCompatActivity {
             NotificationManager notificationManager = getSystemService(NotificationManager.class);
             notificationManager.createNotificationChannel(channel);
         }
+    }
+
+    private void jsonParse() {
+
+        final String[] hora={" "};
+        final String[] numero={" "};
+        final String[] numero2={" "};
+        final String[] nombre2={" "};
+        final String[] nummaletas={" "};
+        final String[] dnipass={" "};
+        final String[] vip={" "};
+        final String[] minusvalia={" "};
+
+
+        SharedPreferences preferences = getSharedPreferences("credenciales", Context.MODE_PRIVATE);
+        String username = preferences.getString("username","");
+        //String username = "catwoman@gothamcitymail.com";
+        Date cDate = new Date();
+        String fDate = new SimpleDateFormat("yyyy-MM-dd").format(cDate);
+        System.out.println(fDate);
+        String url = "http://craaxcloud.epsevg.upc.edu:36301/billetes/pasajero/"+ username +"/"+fDate;
+        System.out.println(url);
+        //mTextViewResult.setText("");
+        // mTextViewResult2.append(hora[0] + "\n");
+        JsonArrayRequest request = new JsonArrayRequest(Request.Method.GET, url, null,
+                new Response.Listener<JSONArray>() {
+                    @Override
+                    public void onResponse(JSONArray response) {
+                        //mTextViewResult.setText("Response: " + response.toString());
+
+                        // JSONObject  = new JSONObject();
+                        // System.out.println();
+                        try {
+                            JSONObject jsonObject = response.getJSONObject(0);
+                            hora[0] = jsonObject.getString("hora");
+                            numero[0] = jsonObject.getString("puerta");
+                            numero2[0] = jsonObject.getString("asiento");
+                            nombre2[0] = jsonObject.getString("aerolinea");
+                            nummaletas[0] = jsonObject.getString("maletas_paid");
+                            dnipass[0] = jsonObject.getString("id_user");
+                            vip[0] = jsonObject.getString("vip");
+                            minusvalia[0] = jsonObject.getString("disable");
+
+                            mTextViewResult2.append(hora[0] );
+                            mTextViewResult3.append(numero[0] );
+                            mTextViewResult4.append(numero2[0] );
+                            mTextViewResult5.append(nombre2[0] );
+                            mTextViewResult6.append(nummaletas[0] );
+                            mTextViewResult7.append(dnipass[0] );
+                            if(vip[0].equals("true")){
+                                CheckBox V = findViewById(R.id.textvip1);
+                                V.setChecked(true);
+                            }
+                            if(minusvalia[0].equals("true")){
+                                CheckBox D = findViewById(R.id.textnecesidades1);
+                                D.setChecked(true);
+                            }
+                        }  catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                error.printStackTrace();
+                //  mTextViewResult3.setText(error.getMessage());
+            }
+        });
+        mQueue.add(request);
     }
 
 }
