@@ -106,6 +106,34 @@ public class Login extends AppCompatActivity {
             @Override
             public void onResponse(JSONObject response) {
                 if(response.toString().contains("ok")){
+                    String urlpreferencias = "http://craaxcloud.epsevg.upc.edu:36301/pasajero/" + user ;
+                    final String[] VIP = { " " };
+                    final String[] DISABLE = { " " };
+                    JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, urlpreferencias, null,
+                            new Response.Listener<JSONObject>() {
+                                @Override
+                                public void onResponse(JSONObject response) {
+                                    //mTextViewResult.setText("Response: " + response.toString());
+                                    try {
+                                        VIP[0] = response.getString("vip");
+                                        DISABLE[0] = response.getString("disable");
+                                        SharedPreferences preferences=getSharedPreferences("credenciales", Context.MODE_PRIVATE);
+                                        SharedPreferences.Editor editor=preferences.edit();
+                                        editor.putString("VIP",VIP[0]);
+                                        editor.putString("DISABLE",DISABLE[0]);
+                                        editor.commit();
+
+                                    } catch (JSONException e) {
+                                        e.printStackTrace();
+                                    }
+                                }
+                            }, new Response.ErrorListener() {
+                        @Override
+                        public void onErrorResponse(VolleyError error) {
+                            error.printStackTrace();
+                        }
+                    });
+                    mQueue.add(request);
                     SharedPreferences preferences=getSharedPreferences("credenciales", Context.MODE_PRIVATE);
                     SharedPreferences.Editor editor=preferences.edit();
                     editor.putString("username",user);

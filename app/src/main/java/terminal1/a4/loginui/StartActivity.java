@@ -1,6 +1,7 @@
 package terminal1.a4.loginui;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
 
 import android.content.Context;
 import android.content.Intent;
