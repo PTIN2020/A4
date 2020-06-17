@@ -63,21 +63,25 @@ public class Perfil extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_perfil);
         configureeditarperfil();
-
+        SharedPreferences preferences = getSharedPreferences("credenciales", Context.MODE_PRIVATE);
+        boolean fogBool = preferences.getBoolean("fog",false);
+        String fogString = new String();
+        if (fogBool) fogString = "true";
+        else fogString = "false";
         //Controldelfog
         @SuppressLint("WrongViewCast") Switch fogControl = (Switch) findViewById(R.id.switch1);
-        if (fogControl != null){
-            fogControl.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-                @Override
-                public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                    if (isChecked){
-                        activarfog();
-                    } else {
-                        desactivarfog();
-                    }
+        fogControl.setChecked(fogBool);
+        System.out.println(fogString);
+        fogControl.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    activarfog();
+                } else {
+                    desactivarfog();
                 }
-            });
-        }
+            }
+        });
 
         //API
         mQueue = Volley.newRequestQueue(this);
@@ -190,11 +194,12 @@ public class Perfil extends AppCompatActivity {
         editor.putBoolean("fog",fogState);
         url+=user;
         Log.d("Entramos en activarfog",url);
+        editor.commit();
         JsonArrayRequest request = new JsonArrayRequest(Request.Method.GET, url, null,
                 new Response.Listener<JSONArray>() {
                     @Override
                     public void onResponse(JSONArray response) {
-                        editor.commit();
+
                     }
 
                 },
@@ -205,7 +210,7 @@ public class Perfil extends AppCompatActivity {
                         //mTextViewResult.setText(error.getMessage());
                     }
                 });
-            mQueue.add(request);
+        mQueue.add(request);
     }
 
     private void desactivarfog(){
@@ -215,13 +220,13 @@ public class Perfil extends AppCompatActivity {
         boolean fogState = false;
         SharedPreferences.Editor editor=preferences.edit();
         editor.putBoolean("fog",fogState);
-
+        editor.commit();
         url+=user;
         JsonArrayRequest request = new JsonArrayRequest(Request.Method.DELETE, url, null,
                 new Response.Listener<JSONArray>() {
                     @Override
                     public void onResponse(JSONArray response) {
-                        editor.commit();
+
                     }
 
                 },
