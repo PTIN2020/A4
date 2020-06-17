@@ -242,7 +242,10 @@ public class Perfil extends AppCompatActivity {
                             //mTextViewResult.setText("Response: " + response.toString());
                             try {
                                 final int min = 0;
-                                final int max = response.length();
+                                int max = response.length();
+                                if(max<=0){
+                                    max=1;
+                                }
                                 final int random = new Random().nextInt((max - min) ) + min;
                                 SharedPreferences.Editor editor = preferences.edit();
                                 editor.commit();
