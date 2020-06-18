@@ -15,7 +15,7 @@ public class AlertReceiver extends BroadcastReceiver {
         SharedPreferences preferences = context.getSharedPreferences("credenciales", Context.MODE_PRIVATE);
         String embarque = preferences.getString("Horaembarque","");
         NotificationCompat.Builder builder = new NotificationCompat.Builder(context, "notifyembarque")
-                .setSmallIcon(R.drawable.logo_login)
+                .setSmallIcon(R.mipmap.ic_launcher)
                 .setContentTitle("Cierra de la puerta de embarque a las " + embarque + "h")
                 .setContentText("Quedan menos de 30 minutos para que cierre el embarque")
                 .setPriority(NotificationCompat.PRIORITY_DEFAULT);
