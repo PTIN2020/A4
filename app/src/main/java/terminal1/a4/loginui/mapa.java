@@ -109,7 +109,7 @@ public class mapa extends AppCompatActivity {
         }
 
         Timer timer = new Timer();
-        timer.schedule(new UpdatePos(), 0, 10000);
+        timer.schedule(new UpdatePos(), 0, 4000);
 
         // geoloc palma
         GeoPoint StartPoint = new GeoPoint(39.54827, 2.73418);
@@ -121,7 +121,6 @@ public class mapa extends AppCompatActivity {
 
         Points_map ();
         /*Thread t = new Thread() {
-
             @Override
             public void run() {
                 try {
@@ -146,7 +145,6 @@ public class mapa extends AppCompatActivity {
                 }
             }
         };
-
         t.start();*/
         map.invalidate();
 
@@ -338,11 +336,9 @@ public class mapa extends AppCompatActivity {
         mQueue.add(request);
     }
 /*    void add_points_map(){
-
         //your items
         ArrayList<OverlayItem> items = new ArrayList<OverlayItem>();
         items.add(new OverlayItem("Point", "Aqui estoy yo", new GeoPoint(39.549627,2.734484))); // Lat/Lon decimal degrees
-
 //the overlay
         ItemizedOverlayWithFocus<OverlayItem> mOverlay = new ItemizedOverlayWithFocus<OverlayItem>(items,
                 new ItemizedIconOverlay.OnItemGestureListener<OverlayItem>() {
@@ -357,7 +353,6 @@ public class mapa extends AppCompatActivity {
                     }
                 },Context);
         mOverlay.setFocusItemsOnTap(true);
-
         map.getOverlays().add(mOverlay);
     }*/
 
