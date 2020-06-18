@@ -1,9 +1,14 @@
 package terminal1.a4.listanegocios;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.view.MenuItem;
 import android.widget.RelativeLayout;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import android.content.Intent;
 
 import android.os.Bundle;
@@ -31,10 +36,15 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.text.BreakIterator;
+import java.util.ArrayList;
+import java.util.List;
+
+import static com.android.volley.toolbox.Volley.newRequestQueue;
 
 public class ListaNegocios extends AppCompatActivity {
-
-    private TextView mTextViewResult;
+    private RecyclerView recyclerView;
+    private RecyclerViewBussinesAdapter adapter;
+    private ArrayList<bussines_card> data_list;
     private RequestQueue mQueue;
 
 
@@ -43,25 +53,20 @@ public class ListaNegocios extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.lista_negocios);
 
-        mTextViewResult = findViewById(R.id.text_view_result);
-        Button buttonParse = findViewById(R.id.button_parse);
 
-        Button buttonPost = findViewById(R.id.button_post);
+        recyclerView = (RecyclerView) findViewById(R.id.recycler_view_negocios);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        data_list = new ArrayList<>();
 
         mQueue = Volley.newRequestQueue(this);
-        buttonParse.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                jsonParse();
-            }
-        });
 
-        buttonPost.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                jsonPost();
-            }
-        });
+        load_data_from_server();
+
+
+
+
+
 
         BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottom_navigation);
 
@@ -92,79 +97,21 @@ public class ListaNegocios extends AppCompatActivity {
             }
         });
     }
-
-    private void jsonPost() {
-        String url = "http://192.168.0.29:3001/pospasajeros";
-        //mTextViewResult.setText("Todo Ready!");
-        JSONObject pasajero = new JSONObject();
-        try {
-            pasajero.put("id_pasajero", "fatima@hotmail.com");
-            pasajero.put("posicionx", -40.567);
-            pasajero.put("posiciony", 3.567);
-
-        } catch (JSONException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
-
-        //mTextViewResult.setText("Response: " + pasajero.toString());
-
-        JsonObjectRequest jsonRequest = new JsonObjectRequest(Request.Method.POST, url, pasajero, new Response.Listener<JSONObject>() {
-            @Override
-            public void onResponse(JSONObject response) {
-                //nada
-            }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                //si entra aqui esta bien ya que en el post no hay json.
-            }
-        });
-        /*
-        StringRequest stringRequest = new StringRequest (Request.Method.POST, url, new Response.Listener<String>() {
-            public void onResponse(String response) {
-                mTextViewResult.setText("Post Done!");
-                response = pasajero.toString();
-            }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                error.printStackTrace();
-                mTextViewResult.setText(error.getMessage());
-            }
-        });*/
-
-        mQueue.add(jsonRequest);
-    }
-
-    private void jsonParse() {
-        mTextViewResult.setText("");
-        String user = "Prueba@hotmail.com";
-        String url1 = "http://192.168.1.57:3000/pasajero/";
-        String url = url1 + user ;
-        final String[] iduserp = {"1"};
-        final String[] nombrep = {" "};
-        final String[] apellidosp = { " " };
-        final String[] naciop = { " " };
-        final String[] generop = { " " };
-        final String[] vipp = { " " };
-        final String[] disablep = { " " };
-        final String[] telefonop = { " " };
-        JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null,
-                new Response.Listener<JSONObject>() {
+    private void load_data_from_server() {
+        String url = "http://craaxcloud.epsevg.upc.edu:36301/negocios";
+        JsonArrayRequest request = new JsonArrayRequest(Request.Method.GET, url, null,
+                new Response.Listener<JSONArray>() {
                     @Override
-                    public void onResponse(JSONObject response) {
+                    public void onResponse(JSONArray response) {
                         //mTextViewResult.setText("Response: " + response.toString());
                         try {
-                                iduserp[0] = response.getString("id_user");
-                                nombrep[0] = response.getString("nombre");
-                                apellidosp[0] = response.getString("apellidos");
-                                naciop[0] = response.getString("nacio");
-                                generop[0] = response.getString("genero");
-                                vipp[0] = response.getString("vip");
-                                disablep[0] = response.getString("disable");
-                                telefonop[0] = response.getString("telefono");
-                                mTextViewResult.append( vipp[0] + "\n\n" +disablep[0] +"\n\n"+ apellidosp[0] );
+                            for (int i = 0; i < response.length(); i++) {
+                                JSONObject bussines = response.getJSONObject(i);
+                                bussines_card b = new bussines_card(bussines.getJSONArray("intereses"), bussines.getString("nombre"), bussines.getString("tipo"), bussines.getString("local"), bussines.getString("descripcion"), bussines.getString("estado"), bussines.getString("logo"), bussines.getString("foto"), bussines.getJSONArray("valoracion"));
+                                data_list.add(b);
+                            }
+                            adapter = new RecyclerViewBussinesAdapter(data_list, ListaNegocios.this);
+                            recyclerView.setAdapter(adapter);
 
                         } catch (JSONException e) {
                             e.printStackTrace();
@@ -174,9 +121,9 @@ public class ListaNegocios extends AppCompatActivity {
             @Override
             public void onErrorResponse(VolleyError error) {
                 error.printStackTrace();
-                mTextViewResult.setText(error.getMessage());
             }
         });
         mQueue.add(request);
     }
+
 }
