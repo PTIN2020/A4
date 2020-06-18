@@ -35,14 +35,14 @@ public class RecyclerViewAirAdapter extends RecyclerView.Adapter<RecyclerViewAir
 
     public class ViewHolder extends RecyclerView.ViewHolder{
 
-        public TextView dst,da,aa;
+        public TextView asiento,fecha,id;
         public ImageView qr;
 
         public ViewHolder(View itemView) {
             super(itemView);
-            dst=itemView.findViewById(R.id.dst);
-            da=itemView.findViewById(R.id.da);
-            aa=itemView.findViewById(R.id.as);
+            id=itemView.findViewById(R.id.id_flight);
+            fecha=itemView.findViewById(R.id.da);
+            asiento=itemView.findViewById(R.id.as);
             qr=itemView.findViewById(R.id.image_air);
 
         }
@@ -50,9 +50,9 @@ public class RecyclerViewAirAdapter extends RecyclerView.Adapter<RecyclerViewAir
     }
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.dst.setText("Destino: "+my_data.get(position).getDst());
-        holder.aa.setText("Hora: "+my_data.get(position).getHora());
-        holder.da.setText("Fecha: "+my_data.get(position).getDa());
+        holder.id.setText("ID: "+my_data.get(position).getId());
+        holder.fecha.setText("Fecha : "+my_data.get(position).getFecha());
+        holder.asiento.setText("Asiento: "+my_data.get(position).getAsiento());
 
     }
     public RecyclerViewAirAdapter (ArrayList<air_card> tar, Context con) {

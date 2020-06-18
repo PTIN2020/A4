@@ -8,29 +8,14 @@ import java.util.List;
 
 public class air_card {
     private String id;
-    private String ori;
-    private String dst;
-    private String da;
-    private String hora;
-    private String ac;
-    private String pu;
-    private int aa;
-    private int at;
-    private JSONArray as;
-    private int qr;
+    private String asiento;
+    private String fecha;
 
 
-    public air_card(String id, String dst, String ori, String da, String hora, String ac, String pu, int aa, int at, JSONArray as, int qr) {
+    public air_card(String asiento, String id, String fecha) {
         this.id = id;
-        this.ori = ori;
-        this.dst = dst;
-        this.da = da;
-        this.hora = hora;
-        this.ac = ac;
-        this.pu = pu;
-        this.aa = aa;
-        this.at = at;
-        this.as = as;
+        this.asiento = asiento;
+        this.fecha = fecha;
     }
 
     public String getId() {
@@ -40,80 +25,20 @@ public class air_card {
     public void setId(String id) {
         this.id = id;
     }
-    public String getOri() {
-        return ori;
+
+    public String getAsiento() {
+        return asiento;
     }
 
-    public void setOri(String ori) {
-        this.ori = ori;
+    public void setAsiento(String asiento) {
+        this.asiento = asiento;
     }
 
-    public String getDst() {
-        return dst;
+    public String getFecha() {
+        return fecha;
     }
 
-    public void setDst(String dst) {
-        this.dst = dst;
-    }
-
-    public String getDa() {
-        return da;
-    }
-
-    public void setDa(String da) {
-        this.da = da;
-    }
-
-    public String getHora() {
-        return hora;
-    }
-
-    public void setHora(String hora) {
-        this.hora = hora;
-    }
-
-    public String getAc() {
-        return ac;
-    }
-
-    public void setAc(String ac) {
-        this.ac = ac;
-    }
-    public String getPu() {
-        return pu;
-    }
-
-    public void setPu(String pu) {
-        this.pu = pu;
-    }
-
-    public int getAa() {
-        return aa;
-    }
-
-    public void setAa(int aa) {
-        this.aa = aa;
-    }
-
-    public int getAt() {
-        return at;
-    }
-
-    public void setAt(int at) {
-        this.at = at;
-    }
-    public JSONArray getAs() {
-        return as;
-    }
-
-    public void setAs(JSONArray as) {
-        this.as = as;
-    }
-    public int getQr() {
-        return qr;
-    }
-
-    public void setAs(int qr) {
-        this.qr = qr;
+    public void setFecha(String fecha) {
+        this.fecha = fecha;
     }
 }

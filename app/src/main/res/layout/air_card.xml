@@ -31,13 +31,13 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/dst"
+                    android:id="@+id/id_flight"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Destino:"
-                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="15dp"
                     android:layout_marginTop="15dp"
-                    android:layout_marginLeft="15dp"/>
+                    android:layout_marginBottom="5dp"
+                    android:text="ID :" />
 
                 <TextView
                     android:id="@+id/as"

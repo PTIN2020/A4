@@ -8,7 +8,7 @@ import android.widget.Button;
 
 import terminal1.a4.loginui.R;
 
-class advice extends nuevoperfil {
+public class advice extends nuevoperfil {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
